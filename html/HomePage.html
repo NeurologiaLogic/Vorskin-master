@@ -13,59 +13,81 @@
     <link href="../css/index.css" rel="stylesheet" />
   </head>
   <body class="homepage">
+    <!-- copy ini untuk setiap page -->
     <div class="navbar-overlay"></div>
+    <!-- toggle mobile menu -->
+    <ul class="toggle-navbar">
+      <li class="vorskin-logo">
+        <a href="../html/HomePage.html"></a>
+      </li>
+      <li>
+        <a href="../html/HomePage.html">Home</a>
+      </li>
+      <li>
+        <a href="../html/Products.html">Products</a>
+        <div class="product-list">
+
+        </div>
+      </li>
+      <li>
+        <a href="../html/AboutPage.html">About</a>
+      </li>
+      <li>
+        <a href="../html/Promotion.html">Promotion</a>
+      </li>
+      <li>
+        <a href="../html/Subscribe.html">Subscribe</a>
+      </li>
+    </ul>
+    <!-- end toggle mobile menu -->
+    <!-- search button -->
+    <!-- search button -->
     <nav>
+      <!-- mobile naviagtion menu end -->
       <div class="mobile-nav">
+        <input
+          class="search-menu"
+          type="text"
+          name=""
+          id="#search-menu"
+          placeholder="search it"
+        />
         <div class="burger-navbar"></div>
-        <ul class="toggle-navbar">
-          <li class="vorskin-logo">
-            <a href="../html/HomePage.html"></a>
-          </li>
-          <li>
-            <a href="../html/HomePage.html">Home</a>
-          </li>
-          <li>
-            <a href="../html/AboutPage.html">Products</a>
-          </li>
-          <li>
-            <a href="../html/AboutPage.html">About</a>
-          </li>
-          <li>
-            <a href="../html/ContactPage.html">Promotion</a>
-          </li>
-          <li>
-            <a href="../html/LoginPage.html">Subscribe</a>
-          </li>
-        </ul>
-        <img src="../assets/vorskin_logo.png" alt="Vorskin Logo" />
+        <img src="../assets/vorskin_logo.svg" alt="Vorskin Logo" />
         <div class="search-navbar"></div>
       </div>
+      <!-- mobile naviagtion menu end -->
+
+      <!-- desktop naviagtion menu -->
       <div class="desktop-nav">
         <ul>
           <li>
             <a href="../html/HomePage.html">Home</a>
           </li>
           <li>
-            <a href="../html/AboutPage.html">Products</a>
+            <a href="../html/Products.html">Products</a>
           </li>
           <li>
             <a href="../html/AboutPage.html">About</a>
           </li>
           <li>
-            <a href="../html/ContactPage.html">Promotion</a>
+            <a href="../html/Promotion.html">Promotion</a>
           </li>
           <li>
-            <a href="../html/LoginPage.html">Subscribe</a>
+            <a href="../html/Subscribe.html">Subscribe</a>
           </li>
         </ul>
         <img src="../assets/vorskin_logo.png" alt="Vorskin Logo" />
       </div>
+      <!-- desktop naviagtion menu end -->
     </nav>
+    <!-- sampai sini -->
     <header></header>
     <main>
+      <img src="../assets/HomePage/your_green_beauty.png" alt="" />
       <section class="healthy_beauty_section">
         <h2>health and beauty</h2>
-        <img src="../assets/healthy_beauty_section.png" alt="" />
+        <img src="../assets/HomePage/healthy_beauty_section.png" alt="" />
         <h2>vegan, cruelty-free, non-toxic</h2>
         <p>
           Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -75,13 +97,18 @@
         <button>find out more</button>
       </section>
 
-      <section class="shop_section"></section>
+      <section class="shop_section">
+        <h2>shop our best sellers</h2>
+        <div class="container"></div>
+      </section>
 
-      <section class="shop_section"></section>
+      <section class="shop_section">
+        <h2>latest products</h2>
+      </section>
 
       <section class="products_section">
         <div class="products_nav">
-          <h2>skincare products</h2>
+          <h3>skincare products</h3>
           <button>view all</button>
         </div>
         <div class="products_container"></div>
@@ -89,17 +116,23 @@
 
       <section class="products_section">
         <div class="products_nav">
-          <h2>skincare products</h2>
+          <h3>skincare products</h3>
           <button>view all</button>
         </div>
         <div class="products_container"></div>
       </section>
 
-      <section>
+      <section class="promotions">
         <h2>you won’t want to miss these out</h2>
+        <div class="products_container">
+          <div class="product_card_one"></div>
+          <div class="product_card_two"></div>
+          <div class="product_card_three"></div>
+        </div>
       </section>
     </main>
     <footer></footer>
   </body>
   <script src="../js/mechanic.js"></script>
+  <script src="../js/dropdown.js"></script>
 </html>
