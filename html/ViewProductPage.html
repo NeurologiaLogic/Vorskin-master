@@ -12,7 +12,7 @@
     <meta name="keywords" content="" />
     <link href="../css/index.css" rel="stylesheet" />
   </head>
-  <body class="products">
+  <body class="viewProduct">
     <!-- copy ini untuk setiap page -->
     <div class="navbar-overlay"></div>
     <!-- toggle mobile menu -->
@@ -58,7 +58,6 @@
 
       <!-- desktop naviagtion menu -->
       <div class="desktop-nav">
-        <img src="../assets/vorskin_logo.svg" alt="Vorskin Logo" />
         <ul>
           <li>
             <a href="../html/HomePage.html">Home</a>
@@ -76,6 +75,7 @@
             <a href="../html/Subscribe.html">Subscribe</a>
           </li>
         </ul>
+        <img src="../assets/vorskin_logo.png" alt="Vorskin Logo" />
       </div>
       <!-- desktop naviagtion menu end -->
     </nav>
@@ -83,17 +83,23 @@
     <header>
       <h3>
         <a href="../html/HomePage.html">home</a> >
-        <a href="../html/Products.html">products</a>
+        <a href="../html/Products.html">products</a> >
+        <a href="">oil antioksidan</a>
       </h3>
     </header>
     <main>
-      <section class="skin_body_section">
-        <div class="left">
-          <h1>skin</h1>
-        </div>
-        <div class="right">
-          <h1>body</h1>
-        </div>
+      <section class="product">
+         <div class="product-image">
+             <img src="../assets/ProductPage/serum_card.svg" alt="Oil Antioksidan" />
+         </div>
+         <div class="title">
+            <h1>Antioxidant Facial Oil</h1>
+            <div class="brand">True To Skin</div>
+         </div>
+         <p>Broccoli Seed Oil for all types of skin</p>
+         <h2>Rp 119.000</h2>
+         <div class="rating">5 stars</div>
+         
       </section>
 
       <section class="skin_body_set_section">
@@ -117,14 +123,14 @@
           </div>
           <div class="sort_by">
             <ul>
-              <!-- <li>best seller</li> -->
+              <li>best seller</li>
               <li>lowest price</li>
               <li>highest price</li>
-              <!-- <li>top rated</li> -->
+              <li>top rated</li>
               <li>alphabetically A - Z</li>
               <li>alphabetically Z - A</li>
-              <!-- <li>oldest to newest</li>
-              <li>newest to oldest</li> -->
+              <li>oldest to newest</li>
+              <li>newest to oldest</li>
             </ul>
           </div>
         </span>
@@ -133,28 +139,32 @@
         <ul>
           <li>
             <label for="true_to_skin">
-              <input type="checkbox" name="" id="true_to_skin" checked />true to skin</label>
+              <input type="checkbox" name="" id="true_to_skin" />true to
+              skin</label
+            >
           </li>
           <li>
             <label for="lacoco">
-              <input type="checkbox" name="" id="lacoco" checked />
+              <input type="checkbox" name="" id="lacoco" />
               lacoco
             </label>
           </li>
           <li>
             <label for="sensatia_botanicals">
-              <input type="checkbox" name="" id="sensatia_botanicals" checked />sensatia botanicals</label>
+              <input type="checkbox" name="" id="sensatia_botanicals" />
+              sensatia botanicals
+            </label>
           </li>
           <li>
             <label for="luna">
-              <input type="checkbox" name="" id="luna" checked />
+              <input type="checkbox" name="" id="luna" />
               luna
             </label>
           </li>
         </ul>
       </section>
       <section class="product_list_section">
-        <!-- <div class="outer_card">
+        <div class="outer_card">
           <div class="best_seller">best <br />seller</div>
           <div class="card">
             <div class="card_image"></div>
@@ -182,12 +192,11 @@
             </div>
             <button>Shop Now</button>
           </div>
-        </div> -->
+        </div>
       </section>
     </main>
     <footer></footer>
   </body>
-  <script src="../js/Database.js"></script>
-  <script src="../js/dropdown.js"></script>
   <script src="../js/mechanic.js"></script>
+  <script src="../js/dropdown.js"></script>
 </html>

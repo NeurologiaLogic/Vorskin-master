@@ -18,6 +18,7 @@ burger.addEventListener("click", (e) => {
   active ^= 1;
 });
 
+
 navbar_overlay.addEventListener("click", (e) => {
   e.preventDefault();
   // alert("clicked");

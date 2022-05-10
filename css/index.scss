@@ -1,9 +1,8 @@
-@import '_settings';
+@import "_settings";
 @import "_home";
 @import "_products";
+@import "_viewProduct";
 @import url("https://fonts.googleapis.com/css?family=Poppins");
-
-
 
 //mobile first desktop second
 * {
@@ -11,13 +10,12 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins";
-  font-size: $h1_size;
+  font-size: 16px;
   text-decoration: none;
   color: black;
 }
 body {
-  
-  overflow-x:hidden;
+  overflow-x: hidden;
   position: relative;
   height: 100%;
   scroll-behavior: smooth;
@@ -163,13 +161,28 @@ body {
     display: none;
   }
   nav .desktop-nav {
-    position: relative;
+    // position: relative;
     display: flex;
+    padding: 0 auto;
+    margin: 0 auto;
     width: 100%;
+    justify-self: center;
+    // width: 100%;
     background: none;
-  }
-  nav .desktop-nav li a {
-    color: black;
+    img {
+      border: 1px solid red;
+      width: 8rem;
+    }
+    ul {
+      display: flex;
+      list-style: none;
+      li {
+        padding: 1rem 1.2rem;
+        a {
+          color: black;
+        }
+      }
+    }
   }
 }
 //end desktop navbar

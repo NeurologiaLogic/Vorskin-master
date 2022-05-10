@@ -220,7 +220,9 @@
   text-align: left;
 }
 
-.products .filter-sort {
+.products .filter_sort {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -233,7 +235,8 @@
   margin: 0.5rem 0.5rem;
 }
 
-.products .filter-sort span {
+.products .filter_sort span {
+  position: relative;
   margin: 0 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -244,20 +247,89 @@
   font-size: 16px;
 }
 
-.products .filter-sort span h2 {
+.products .filter_sort span .dropdown_menu {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.products .filter_sort span .dropdown_menu h2 {
   font-size: 16px;
   font-weight: bold;
 }
 
-.products .filter-sort span img {
+.products .filter_sort span .dropdown_menu img {
   margin-right: 0.5rem;
   width: 2rem;
 }
 
-.products .filter-sort span img:nth-child(2) {
+.products .filter_sort span h2 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.products .filter_sort span img {
+  margin-right: 0.5rem;
+  width: 2rem;
+}
+
+.products .filter_sort span img:nth-child(2) {
   margin-left: 0.5rem;
   width: 0.8rem;
   padding-bottom: 0.5rem;
+}
+
+.products .filter_sort span .dropdown_menu h2 {
+  cursor: pointer;
+}
+
+.products .filter_sort span .dropdown_menu img {
+  cursor: pointer;
+}
+
+.products .filter_sort span .sort_by {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  height: auto;
+  -webkit-box-shadow: 0px 4px 4px rgba(73, 62, 131, 0.1237);
+          box-shadow: 0px 4px 4px rgba(73, 62, 131, 0.1237);
+  z-index: 1;
+  border-radius: 1rem;
+  background: #dff1e3;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  bottom: -13rem;
+  left: -5rem;
+}
+
+.products .filter_sort span .sort_by ul {
+  list-style: none;
+}
+
+.products .filter_sort span .sort_by li {
+  font-weight: medium;
+  border-radius: 0.5rem;
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 14px;
+}
+
+.products .filter_sort span .sort_by li:hover {
+  background: #90bdb2;
 }
 
 .products .brand_select_section {
@@ -296,6 +368,10 @@
 }
 
 .products .brand_select_section ul li label {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   float: left;
   position: relative;
   color: #111111;
@@ -322,11 +398,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 1rem;
   width: 100%;
 }
 
 .products .product_list_section .outer_card {
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  width: 255px;
   position: relative;
 }
 
@@ -345,6 +429,8 @@
 }
 
 .products .product_list_section .outer_card .card {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   -webkit-box-shadow: 0px 4.19672px 4.19672px rgba(73, 62, 131, 0.3);
           box-shadow: 0px 4.19672px 4.19672px rgba(73, 62, 131, 0.3);
   overflow: hidden;
@@ -361,6 +447,8 @@
 }
 
 .products .product_list_section .outer_card .card .card_image {
+  -webkit-transition: all 5s ease-in-out;
+  transition: all 5s ease-in-out;
   background-image: url("../assets/ProductPage/serum_card.svg");
   background-position: center;
   background-repeat: no-repeat;
@@ -370,6 +458,8 @@
 }
 
 .products .product_list_section .outer_card .card .card_description {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   padding: 0.5rem 1rem;
   -webkit-box-align: end;
       -ms-flex-align: end;
@@ -416,7 +506,7 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: "Poppins";
-  font-size: 60;
+  font-size: 16px;
   text-decoration: none;
   color: black;
 }
@@ -581,14 +671,29 @@ body .toggle-navbar li:nth-child(1):hover {
     display: none;
   }
   nav .desktop-nav {
-    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    padding: 0 auto;
+    margin: 0 auto;
     width: 100%;
+    justify-self: center;
     background: none;
   }
-  nav .desktop-nav li a {
+  nav .desktop-nav img {
+    border: 1px solid red;
+    width: 8rem;
+  }
+  nav .desktop-nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+  }
+  nav .desktop-nav ul li {
+    padding: 1rem 1.2rem;
+  }
+  nav .desktop-nav ul li a {
     color: black;
   }
 }

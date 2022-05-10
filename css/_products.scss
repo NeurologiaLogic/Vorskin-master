@@ -83,17 +83,32 @@
       text-align: left;
     }
   }
-  .filter-sort {
+  .filter_sort {
+    transition: all 0.5s ease-in-out;
     height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
     margin: 0.5rem 0.5rem;
     span {
+      position: relative;
       margin: 0 1rem;
       display: flex;
       align-items: center;
       font-size: $h6_size;
+      .dropdown_menu {
+        transition: all 0.5s ease-in-out;
+        display: flex;
+        user-select: none;
+        h2 {
+          font-size: $h6_size;
+          font-weight: $h2_weight;
+        }
+        img {
+          margin-right: 0.5rem;
+          width: 2rem;
+        }
+      }
       h2 {
         font-size: $h6_size;
         font-weight: $h2_weight;
@@ -107,8 +122,43 @@
         width: 0.8rem;
         padding-bottom: 0.5rem;
       }
-      .sort_by{
-        
+      .dropdown_menu {
+        h2 {
+          cursor: pointer;
+        }
+        img {
+          cursor: pointer;
+        }
+      }
+      .sort_by {
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        user-select: none;
+        cursor: pointer;
+        height: auto;
+        box-shadow: 0px 4px 4px rgba(73, 62, 131, 0.1237);
+        z-index: 1;
+        border-radius: 1rem;
+        background: $secondary2;
+        padding: 0.5rem 1rem;
+        position: absolute;
+        bottom: -13rem;
+        left: -5rem;
+        ul {
+          list-style: none;
+        }
+        li {
+          font-weight: medium;
+          border-radius: 0.5rem;
+          height: 100%;
+          width: 100%;
+          padding: 0.5rem 1rem;
+          font-size: 14px;
+          &:hover {
+            background: $secondary;
+          }
+        }
       }
     }
   }
@@ -135,6 +185,7 @@
         text-align: center;
         box-shadow: 0px 1px 1px rgba(73, 62, 131, 0.1237);
         label {
+          user-select: none;
           float: left;
           position: relative;
           color: #111111;
@@ -158,26 +209,33 @@
   }
 
   .product_list_section {
+    // height:348px;
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     padding: 1rem;
     width: 100%;
     .outer_card {
-      position:relative;
-      .best_seller{
-        font-size:14px;
-        padding:10px;
-        color:white;
+      transition: all 2s ease-in-out;
+      // opacity: 0;
+      width: 255px;
+      position: relative;
+      .best_seller {
+        font-size: 14px;
+        padding: 10px;
+        color: white;
         position: absolute;
-        top:0;
-        right:0;
+        top: 0;
+        right: 0;
         text-align: center;
         // border:1px solid red;
-        width:4rem;
-        height:4rem;
-        border-radius:50%;
-        background-color:black;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: black;
       }
       .card {
+        transition: all 0.5s ease-in-out;
         box-shadow: 0px 4.19672px 4.19672px rgba(73, 62, 131, 0.3);
         overflow: hidden;
         display: flex;
@@ -186,6 +244,7 @@
         border-radius: 21px;
         background-color: white;
         .card_image {
+          transition: all 5s ease-in-out;
           background-image: url("../assets/ProductPage/serum_card.svg");
           background-position: center;
           background-repeat: no-repeat;
@@ -194,6 +253,7 @@
           width: 100%;
         }
         .card_description {
+          transition: all 0.2s ease-in-out;
           padding: 0.5rem 1rem;
           align-items: flex-end;
           h3 {
