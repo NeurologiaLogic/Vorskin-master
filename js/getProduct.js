@@ -1,100 +1,3 @@
-prod = {
-  skin: ["Cleanser", "Serum", "Essence", "Oil", "Mask"],
-  body: ["Butter", "Wash", "Scrub", "Lotion"],
-};
-all_brands = [];
-product_database_list = {
-  "true to skin": {
-    1: {
-      name: "hi",
-      price: 10,
-      img: "../assets/ProductPage/serum_card.svg",
-    },
-    2: {
-      name: "gh",
-      price: 9,
-      img: "../assets/ProductPage/serum_card.svg",
-    },
-    3: {
-      name: "fg",
-      price: 8,
-      img: "../assets/ProductPage/serum_card.svg",
-    },
-    4: {
-      name: "ef",
-      price: 7,
-      img: "../assets/ProductPage/serum_card.svg",
-    },
-    5: {
-      name: "da",
-      price: 6,
-      img: "../assets/ProductPage/serum_card.svg",
-    },
-  },
-  lacoco: {
-    6: {
-      name: "cb",
-      price: 5,
-      img: "../assets/ProductPage/serum_card.svg",
-    },
-  },
-  "sensatia botanicals": {
-    7: {
-      name: "ba",
-      price: 4,
-      img: "../assets/ProductPage/serum_card.svg",
-    },
-  },
-  luna: {
-    8: {
-      name: "ab",
-      price: 3,
-      img: "../assets/ProductPage/serum_card.svg",
-    },
-    9: {
-      name: "aa",
-      price: 2,
-      img: "../assets/ProductPage/serum_card.svg",
-    },
-  },
-};
-
-//alphabetically A-Z | Z-A
-for (keys in prod) {
-  const ascending = prod[keys].sort();
-  console.log(ascending);
-  console.log(ascending.reverse());
-  console.log("\n\n");
-}
-
-const add_and_sort = () => {
-  for (k in product_database_list) {
-    for (v in product_database_list[k]) {
-      all_brands.push(product_database_list[k][v]);
-    }
-  }
-  // console.log(all_brands);
-  // console.log("sortedZToA");
-  const sortedZToA = all_brands.sort((a, b) => {
-    a.name < b.name ? 1 : -1;
-  });
-  // console.log(sortedZToA);
-
-  // console.log("sortedAToZ");
-  const sortedAToZ = sortedZToA.reverse();
-  console.log(sortedAToZ);
-
-  const sortedByPriceAscending = sortedAtoZ.sort((a, b) => {
-    return a.price - b.price;
-  });
-  // console.log(sortedByPriceAscending);
-
-  const sortedByPriceDescending = sortedAtoZ.sort((a, b) => {
-    return b.price - a.price;
-  });
-  // console.log(sortedByPriceDescending);
-};
-brand = ["True to Skin", "Sensatia Botanicals"];
 test_arr = [
   {
     No: 1,
@@ -289,7 +192,7 @@ test_arr = [
     "Product Name": "Antioxidant oil - Broccoli Seed Oil",
     "Final Price": 119000,
     "Initial Price": null,
-    "Note (Pop -out circle)": null,
+    "Note (Pop -out circle)": "BS",
     "Short Desc": "Broccoli Seed Oil for All Types of Skin",
     "Long Desc":
       "Broccoli Seed Oil gives super light texture, non-comedogenic, soothes, moisturizes, and nourishes the skin which is suitable for all skin types.",
@@ -308,7 +211,7 @@ test_arr = [
     "Product Name": "Intensive Treatment Eye Serum",
     "Final Price": 180000,
     "Initial Price": null,
-    "Note (Pop -out circle)": null,
+    "Note (Pop -out circle)": "BS",
     "Short Desc": "Highly Concentrated Eye Serum",
     "Long Desc":
       "Intensive Treatment Eye Serum is a high concentration serum specifically for the skin around eyes. It absorbs quickly and doesn’t leave a sticky feeling. This serum can be used easily, comfortably, and provides maximum care for the skin around the eyes.",
@@ -692,5 +595,137 @@ test_arr = [
     Link: "https://www.sensatia.com/id/bath/body-lotion/balinese-jasmine-cananga-body-lotion",
   },
 ];
+prod = {
+  skin: ["Cleanser", "Essence", "Serum", "Mask"],
+  body: ["Wash", "Scrub", "Butter", "Lotion"],
+};
+class productsClass {
+  skin = [];
+  body = [];
+  bestSellerProducts = [];
+  offerProducts = [];
+  soldOutProducts = [];
+  newProducts = [];
+  cleanser = [];
+  essence = [];
+  serum = [];
+  mask = [];
+  wash = [];
+  scrub = [];
+  butter = [];
+  lotion = [];
 
-
+  getBy(type) {
+    if (type == "BS") {
+      return this.bestSeller();
+    } else if (type == "SO") {
+      return this.soldOut();
+    } else if (type == "N") {
+      return this.newProduct();
+    } else if (type == "O") {
+      return this.offer();
+    }
+  }
+  constructor() {
+    for (let k in test_arr) {
+      // console.log(k)
+      for (let v in test_arr[k]) {
+        // for (i in test_arr[k][v]) {
+        // if (brand.includes(test_arr[k]["Brand"])) {
+        // console.log(test_arr[k]["Category"])
+        if (prod["skin"].includes(test_arr[k]["Category"])) {
+          let obj = {};
+          obj["Category"] = test_arr[k]["Category"];
+          obj["Brand"] = test_arr[k]["Brand"];
+          obj["Product Name"] = test_arr[k]["Product Name"];
+          obj["Final Price"] = test_arr[k]["Final Price"];
+          obj["Initial Price"] = test_arr[k]["Initial Price"];
+          obj["Note (Pop -out circle)"] = test_arr[k]["Note (Pop -out circle)"];
+          obj["Short Desc"] = test_arr[k]["Short Desc"];
+          obj["Long Desc"] = test_arr[k]["Long Desc"];
+          obj["Ingredients"] = test_arr[k]["Ingredients"];
+          obj["Volume"] = test_arr[k]["Volume"];
+          obj["Link"] = test_arr[k]["Link"];
+          obj["Img"] = `../assets/productsImage/${test_arr[k]["No"]}.svg`;
+          obj["ImgFull"] = `../assets/productsImage/${test_arr[k]["No"]}full.svg`;
+          this.skin.push(obj);
+        } else if (prod["body"].includes(test_arr[k]["Category"])) {
+          let obj = {};
+          obj["Category"] = test_arr[k]["Category"];
+          obj["Brand"] = test_arr[k]["Brand"];
+          obj["Product Name"] = test_arr[k]["Product Name"];
+          obj["Final Price"] = test_arr[k]["Final Price"];
+          obj["Initial Price"] = test_arr[k]["Initial Price"];
+          obj["Note (Pop -out circle)"] = test_arr[k]["Note (Pop -out circle)"];
+          obj["Short Desc"] = test_arr[k]["Short Desc"];
+          obj["Long Desc"] = test_arr[k]["Long Desc"];
+          obj["Ingredients"] = test_arr[k]["Ingredients"];
+          obj["Volume"] = test_arr[k]["Volume"];
+          obj["Link"] = test_arr[k]["Link"];
+          obj["Img"] = `../assets/productsImage/${test_arr[k]["No"]}.svg`;
+          obj["ImgFull"] = `../assets/productsImage/${test_arr[k]["No"]}full.svg`;
+          this.body.push(obj);
+          // console.log("body");
+        }
+        break;
+      }
+      //  }
+    }
+  } //end of constructor
+  bestSeller() {
+    for (let i in this.body) {
+      if (this.body[i]["Note (Pop -out circle)"] == "BS")
+        this.bestSellerProducts.push(this.body[i]);
+    }
+    for (let i in this.skin) {
+      if (this.skin[i]["Note (Pop -out circle)"] == "BS")
+        this.bestSellerProducts.push(this.skin[i]);
+    }
+    console.log(this.bestSellerProducts);
+    return this.bestSellerProducts;
+  }
+  offer() {
+    for (let i in this.body) {
+      if (this.body[i]["Note (Pop -out circle)"] == "O")
+        this.offerProducts.push(this.body[i]);
+    }
+    for (let i in this.skin) {
+      if (this.skin[i]["Note (Pop -out circle)"] == "O")
+        this.offerProducts.push(this.skin[i]);
+    }
+    return this.offerProducts;
+  }
+  soldOut() {
+    for (let i in this.body) {
+      if (this.body[i]["Note (Pop -out circle)"] == "SO")
+        this.soldOutProducts.push(this.body[i]);
+    }
+    for (let i in this.skin) {
+      if (this.skin[i]["Note (Pop -out circle)"] == "SO")
+        this.soldOutProducts.push(this.skin[i]);
+    }
+    return this.soldOutProducts;
+  }
+  newProduct() {
+    for (let i in this.body) {
+      if (this.body[i]["Note (Pop -out circle)"] == "N")
+        this.newProducts.push(this.body[i]);
+    }
+    for (let i in this.skin) {
+      if (this.skin[i]["Note (Pop -out circle)"] == "N")
+        this.newProducts.push(this.skin[i]);
+    }
+    return this.newProducts;
+  }
+  FilteredBodyCategory(name) {
+    return this.body.filter((item) => item.Category == name);
+  }
+  FilteredSkinCategory(name) {
+    return this.skin.filter((item) => item.Category == name);
+  }
+}
+let p = new productsClass();
+let temp = p.FilteredSkinCategory("Mask")
+for (let i in temp){
+  console.log(temp[i]["ImgFull"]);
+}

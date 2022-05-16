@@ -6,6 +6,7 @@ let search_button = document.querySelector(".search-navbar");
 let body = document.querySelector("body");
 let active = 0;
 
+//navbar
 burger.addEventListener("click", (e) => {
   e.preventDefault();
   console.log("inactive");
@@ -18,7 +19,7 @@ burger.addEventListener("click", (e) => {
   active ^= 1;
 });
 
-
+//overlay
 navbar_overlay.addEventListener("click", (e) => {
   e.preventDefault();
   // alert("clicked");
@@ -29,6 +30,8 @@ navbar_overlay.addEventListener("click", (e) => {
   active ^= 1;
   // navigation.style.display = "none";
 });
+
+//search bar
 search_button.addEventListener("click", (e) => {
   e.preventDefault();
   search_menu.style.width = "100%";

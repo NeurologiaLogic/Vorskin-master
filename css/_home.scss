@@ -1,16 +1,17 @@
 @import "_settings";
+
 .homepage {
   img {
     width: 100%;
   }
   .healthy_beauty_section {
     padding: 1rem 1rem;
-    border: 1px solid red;
+    // border: 1px solid red;
     display: flex;
     flex-direction: column;
     img {
-      border: 1px solid red;
-      width: 100%;
+      // border: 1px solid red;
+      width: 100vw;
       height: 50%;
       display: block;
       margin: auto;
@@ -23,83 +24,557 @@
       text-align: left;
     }
     button {
-      border: 1px solid red;
-
-      padding: 0.5rem 2rem;
+      // border: 1px solid red;
+      border: none;
+      padding: 0.5rem 3rem;
       margin: auto auto;
+      border-radius: 2rem;
+      color: white;
+      font-weight: bold;
+      background: linear-gradient(to right, $gradient_start, $gradient_end);
     }
   }
   .shop_section {
     h2 {
+      color: $secondary3;
+      margin: 1rem 0;
       text-align: center;
+    }
+    .container {
+      padding: 1rem;
+      // border:1px solid red;
+      display: flex;
+      // align-items:center;
+      overflow: auto;
+      .outer_card {
+        flex: none;
+        transition: all 2s ease-in-out;
+        width: 200px;
+        position: relative;
+        .args {
+          font-size: 14px;
+          padding: 10px;
+          color: white;
+          position: absolute;
+          top: 0;
+          right: 0;
+          text-align: center;
+          // border:1px solid red;
+          width: 4rem;
+          height: 4rem;
+          border-radius: 50%;
+          background-color: black;
+        }
+        .card {
+          transition: all 0.5s ease-in-out;
+          box-shadow: 0px 4.19672px 4.19672px rgba(73, 62, 131, 0.3);
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          margin: 0.5rem;
+          border-radius: 21px;
+          background-color: white;
+          .card_image {
+            transition: all 5s ease-in-out;
+            // background-image: url("../assets/productsImage/1.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 200px;
+            width: 100%;
+          }
+          .card_description {
+            transition: all 0.2s ease-in-out;
+            padding: 0.5rem 1rem;
+            align-items: flex-end;
+            height: 9rem;
+            h3 {
+              text-align: left;
+              font-size: 1.7vw;
+              letter-spacing: 0.2rem;
+              display: block;
+            }
+            h2 {
+              text-align: left;
+              font-size: 14px;
+              font-weight: bold;
+              margin: 0.5rem 0;
+            }
+            p {
+              text-align: left;
+              font-size: 12px;
+              font-weight: medium;
+            }
+            .initial_price {
+              text-align: left;
+              text-decoration: line-through;
+              margin-right: 0.5rem;
+            }
+          }
+          .price {
+            font-size: 16px;
+            font-weight: medium;
+          }
+          button {
+            background: $primary;
+            border: none;
+            padding: 0.5rem 1rem;
+            color: white;
+            font-weight: bold;
+          }
+        }
+      }
     }
   }
 
   .products_section {
-    margin: 2rem 0rem;
-    background-color: $primary2;
-    height: 300px;
-    display: block;
-    border: 1px solid red;
-    .products_nav {
-      padding: 2rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      button {
-        position: flex-end;
-        padding: 0.5rem 1.5rem;
+    @keyframes cleanser {
+      25% {
+        background-image: url("../assets/productsImage/1full.svg");
+      }
+      50% {
+        background-image: url("../assets/productsImage/2full.svg");
+      }
+      75% {
+        background-image: url("../assets/productsImage/3full.svg");
+      }
+      100% {
+        background-image: url("../assets/productsImage/4full.svg");
       }
     }
-    .products_container {
-      width: 100%;
-      height: 100px;
-      background-color: red;
+    @keyframes essence {
+      25% {
+        background-image: url("../assets/productsImage/5full.svg");
+      }
+      50% {
+        background-image: url("../assets/productsImage/6full.svg");
+      }
+      75% {
+        background-image: url("../assets/productsImage/7full.svg");
+      }
+      100% {
+        background-image: url("../assets/productsImage/8full.svg");
+      }
+    }
+    @keyframes serum {
+      10% {
+        background-image: url("../assets/productsImage/9full.svg");
+      }
+      20% {
+        background-image: url("../assets/productsImage/10full.svg");
+      }
+      30% {
+        background-image: url("../assets/productsImage/11full.svg");
+      }
+      40% {
+        background-image: url("../assets/productsImage/12full.svg");
+      }
+      50% {
+        background-image: url("../assets/productsImage/13full.svg");
+      }
+      60% {
+        background-image: url("../assets/productsImage/14full.svg");
+      }
+    }
+    @keyframes mask {
+      0% {
+        background-image: url("../assets/productsImage/15full.svg");
+      }
+      10% {
+        background-image: url("../assets/productsImage/16full.svg");
+      }
+      20% {
+        background-image: url("../assets/productsImage/17full.svg");
+      }
+      30% {
+        background-image: url("../assets/productsImage/18full.svg");
+      }
+      40% {
+        background-image: url("../assets/productsImage/19full.svg");
+      }
+      50% {
+        background-image: url("../assets/productsImage/20full.svg");
+      }
+      60% {
+        background-image: url("../assets/productsImage/21full.svg");
+      }
+      70% {
+        background-image: url("../assets/productsImage/22full.svg");
+      }
+    }
+    padding: 1rem;
+    margin: 2rem 0rem;
+    .container {
+      display: flex;
+      flex-direction: column;
+      .products_container {
+        align-items: center;
+        justify-content: center;
+        display: grid;
+        grid-template-areas:
+          "cleanser essence"
+          "serum mask";
+        .cleanser {
+          position: relative;
+          text-align: center;
+          width: 15rem; // width:uto;
+          grid-area: cleanser;
+          // background-color: $primary;
+          .img {
+            // border: 1px solid red;
+            height: 300px;
+            border-radius: 0.5rem;
+            background-image: url("../assets/productsImage/4full.svg");
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            animation: cleanser 8s linear infinite;
+            animation-play-state: paused;
+            background-repeat: no-repeat;
+            &:after {
+              content: "";
+              position: absolute;
+              pointer-events: none;
+              top: 50%;
+              left: 50%;
+              width: 70%;
+              height: 90%;
+              transform: translate(-50%, -50%);
+              // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+              background: linear-gradient(
+                to bottom,
+                $gradient_start2,
+                $gradient_end2
+              );
+            }
+            &:hover {
+              animation-play-state: running;
+              &:after{
+                opacity:0;
+                transition: all 0.5s ease-in-out;
+
+              }
+              h2{
+                opacity:0;
+                transition: all 0.5s ease-in-out;
+
+              }
+              // transition: all 0.5s ease-in-out;
+            }
+          }
+          h2 {
+            // padding: auto 0;
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: $secondary3;
+          }
+        }
+
+        .essence {
+          position: relative;
+          text-align: center;
+          width: 15rem; // width:uto;
+          grid-area: essence;
+          // background-color: $primary;
+          .img {
+            // border: 1px solid red;
+            height: 300px;
+            border-radius: 0.5rem;
+            background-image: url("../assets/productsImage/5full.svg");
+            position: relative;
+            animation: essence 8s linear infinite;
+            animation-play-state: paused;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 70%;
+              height: 90%;
+              transform: translate(-50%, -50%);
+              // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+              background: linear-gradient(
+                to bottom,
+                $gradient_start2,
+                $gradient_end2
+              );
+            }
+            &:hover {
+              animation-play-state: running;
+              &:after{
+                opacity:0;
+                transition: all 0.5s ease-in-out;
+
+              }
+              h2{
+                opacity:0;
+                transition: all 0.5s ease-in-out;
+
+              }
+              // transition: all 0.5s ease-in-out;
+            }
+          }
+          h2 {
+            // padding: auto 0;
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: $secondary3;
+          }
+        }
+        .serum {
+          position: relative;
+          text-align: center;
+          width: 15rem; // width:uto;
+          grid-area: serum;
+          // background-color: $primary;
+          .img {
+            // border: 1px solid red;
+            animation: serum 12s linear infinite;
+            animation-play-state: paused;
+            height: 300px;
+            border-radius: 0.5rem;
+            background-image: url("../assets/productsImage/9full.svg");
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 70%;
+              height: 90%;
+              transform: translate(-50%, -50%);
+              // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+              background: linear-gradient(
+                to bottom,
+                $gradient_start2,
+                $gradient_end2
+              );
+            }
+            &:hover {
+              animation-play-state: running;
+              &:after{
+                opacity:0;
+                transition: all 0.5s ease-in-out;
+
+              }
+              h2{
+                opacity:0;
+              }
+              // transition: all 0.5s ease-in-out;
+            }
+          }
+          h2 {
+            // padding: auto 0;
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: $secondary3;
+          }
+        }
+        .mask {
+          position: relative;
+          text-align: center;
+          width: 15rem; // width:uto;
+          grid-area: mask;
+
+          // background-color: $primary;
+          .img {
+            // border: 1px solid red;
+            height: 300px;
+            border-radius: 0.5rem;
+            background-image: url("../assets/productsImage/15full.svg");
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: mask 14s linear infinite;
+            animation-play-state: paused;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 70%;
+              height: 90%;
+              transform: translate(-50%, -50%);
+              // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+              background: linear-gradient(
+                to bottom,
+                $gradient_start2,
+                $gradient_end2
+              );
+            }
+            &:hover {
+              animation-play-state: running;
+              &:after{
+                opacity:0;
+                transition: all 0.5s ease-in-out;
+
+              }
+              h2{
+                opacity:0;
+                transition: all 0.5s ease-in-out;
+
+              }
+            }
+          }
+          h2 {
+            // padding: auto 0;
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: $secondary3;
+          }
+        }
+      }
     }
   }
+
   .promotions {
     border: 1px solid red;
-    width: 100%;
-    padding: 4rem;
-    height: auto;
+    // width: 100%;
+    padding: 0.5rem;
     h2 {
       text-align: center;
     }
     .products_container {
       display: flex;
-      flex-direction: column;
+      border: 1px solid red;
+      align-items: center;
+      // flex-wrap: wrap;
       .product_card_one {
         filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
         // border: 1px solid red;
         margin: 0 auto;
-        height: 500px;
+        height: 300px;
         width: 100%;
         background-position: center;
-        background-image: url(../assets/HomePage/promotion1.svg);
+        background-image: url(../assets/HomePage/promotion/promotion1.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }
       .product_card_two {
+        flex-wrap: wrap;
         filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
         // border: 1px solid red;
         margin: 1rem auto;
-        height: 500px;
+        height: 300px;
         width: 100%;
         background-position: center;
-        background-image: url(../assets/HomePage/promotion2.svg);
+        background-image: url(../assets/HomePage/promotion/promotion2.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }
+
       .product_card_three {
+        flex-wrap: wrap;
+
         filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
         // border: 1px solid red;
         margin: 0 auto;
-        height: 500px;
+        height: 300px;
         width: 100%;
         background-position: center;
-        background-image: url(../assets/HomePage/promotion3.svg);
+        background-image: url(../assets/HomePage/promotion/promotion3.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }
     }
+  }
+  .brands {
+    border: 1px solid red;
+    margin: 3rem 0;
+    display: flex;
+    justify-content: center;
+    // flex-wrap: wrap;
+    width: 100%;
+    padding: 0.5rem 0.5rem;
+    // height: auto;
+    .brand_one {
+      // margin: 0 auto;
+      display: inline-block;
+      height: 100px;
+      width: 100%;
+      background-image: url(../assets/HomePage/brands/brand1.svg);
+      background-position: center;
+      background-size: contain;
+      filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+      background-repeat: no-repeat;
+    }
+    .brand_two {
+      display: inline-block;
+
+      height: 100px;
+      width: 100%;
+      background-image: url(../assets/HomePage/brands/brand1.svg);
+      background-position: center;
+      background-size: contain;
+      filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+      background-repeat: no-repeat;
+    }
+    .brand_three {
+      display: inline-block;
+
+      height: 100px;
+      width: 100%;
+      background-image: url(../assets/HomePage/brands/brand1.svg);
+      background-position: center;
+      background-size: contain;
+      filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+      background-repeat: no-repeat;
+    }
+
+    .brand_four {
+      height: 100px;
+      width: 100%;
+      background-image: url(../assets/HomePage/brands/brand1.svg);
+      background-position: center;
+      background-size: contain;
+      filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+      background-repeat: no-repeat;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .shop_section {
+      // border-top: 1px solid red;
+      .container {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        // border-top: 1px solid red;
+        padding: 0 auto;
+      }
+    }
+    // .healthy_beauty_section{
+    //   img{
+    //     max-width:1/3vw;
+    //     height:100%;
+    //   }
+    // }
   }
 }

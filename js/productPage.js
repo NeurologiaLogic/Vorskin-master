@@ -1,28 +1,28 @@
 //product navigation
-let productList = document.querySelector(".product-list");
-prod = {
-  skin: ["cleanser", "serum", "essence", "oil", "mask"],
-  body: ["butter", "wash", "scrub", "lotion"],
-};
-for (keys in prod) {
-  // console.log(keys);
-  div = document.createElement("div");
-  div.innerHTML = keys;
-  div.style.color = "white";
-  div.style.margin = "1rem 0px 1rem 0px";
-  div.appendChild(document.createElement("br"));
-  for (i in prod[keys]) {
-    // console.log(prod[keys][i]);
-    a = document.createElement("a");
-    a.innerHTML = prod[keys][i];
-    a.href = "#";
-    a.style.padding = "1rem 0 0 1rem";
-    a.style.margin = "1rem 0px 1rem 0px";
-    div.appendChild(a);
-    div.appendChild(document.createElement("br"));
-  }
-  productList.appendChild(div);
-}
+// let productList = document.querySelector(".product-list");
+// prod = {
+//   skin: ["cleanser", "serum", "essence", "oil", "mask"],
+//   body: ["butter", "wash", "scrub", "lotion"],
+// };
+// for (keys in prod) {
+//   // console.log(keys);
+//   div = document.createElement("div");
+//   div.innerHTML = keys;
+//   div.style.color = "white";
+//   div.style.margin = "1rem 0px 1rem 0px";
+//   div.appendChild(document.createElement("br"));
+//   for (i in prod[keys]) {
+//     // console.log(prod[keys][i]);
+//     a = document.createElement("a");
+//     a.innerHTML = prod[keys][i];
+//     a.href = "#";
+//     a.style.padding = "1rem 0 0 1rem";
+//     a.style.margin = "1rem 0px 1rem 0px";
+//     div.appendChild(a);
+//     div.appendChild(document.createElement("br"));
+//   }
+//   productList.appendChild(div);
+// }
 
 let liCheckBox = document.querySelectorAll(".brand_select_section>ul>li");
 let checkbox = document.querySelectorAll(
@@ -39,9 +39,10 @@ function containsObject(obj, list) {
   }
   return false;
 }
+
 //mark brand
 brand = [];
-
+all_brands = [];
 const generateData = () => {
   brand.forEach((key) => {
     for (const v in product_database_list[key]) {
@@ -148,6 +149,8 @@ liCheckBox.forEach((elem) => {
     console.log(`all brands after loops: ${all_brands}`);
   });
 });
+
+
 // Object.keys(localStorage).forEach(function (key) {
 //   for (const v in product_database_list[key]) {
 //here is the problem
@@ -230,11 +233,13 @@ sortedBySelection.forEach((sort) => {
 //product populate with cards
 //root for append
 let product_container = document.querySelector(".product_list_section");
+
 const depopulate_product = (i) => {
   if (product_container.hasChildNodes()) {
     product_container.removeChild(product_container.children[i], 1);
   }
 };
+
 const populate_product = (i) => {
   // console.log(`this is i: ${i}`);
   let outer_card = document.createElement("div");

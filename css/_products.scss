@@ -61,9 +61,11 @@
       }
     }
   }
-  .skin_body_set_section {
+  .skin_body_set_section,
+  .body_product_section,
+  .skin_product_section {
     h2 {
-      text-align: center;
+      text-align: left;
     }
     div {
       background-image: linear-gradient(
@@ -220,7 +222,7 @@
       // opacity: 0;
       width: 255px;
       position: relative;
-      .best_seller {
+      .args {
         font-size: 14px;
         padding: 10px;
         color: white;
@@ -271,11 +273,10 @@
           .price {
             font-size: 16px;
             font-weight: medium;
-            &:before {
-              content: "hihi";
-              text-decoration: line-through;
-              margin-right: 0.5rem;
-            }
+          }
+          .initial_price{
+            text-decoration: line-through;
+            margin-right: 0.5rem;
           }
         }
         button {
