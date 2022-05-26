@@ -647,7 +647,9 @@ class productsClass {
           obj["Volume"] = test_arr[k]["Volume"];
           obj["Link"] = test_arr[k]["Link"];
           obj["Img"] = `../assets/productsImage/${test_arr[k]["No"]}.svg`;
-          obj["ImgFull"] = `../assets/productsImage/${test_arr[k]["No"]}full.svg`;
+          obj[
+            "ImgFull"
+          ] = `../assets/productsImage/${test_arr[k]["No"]}full.svg`;
           this.skin.push(obj);
         } else if (prod["body"].includes(test_arr[k]["Category"])) {
           let obj = {};
@@ -663,7 +665,9 @@ class productsClass {
           obj["Volume"] = test_arr[k]["Volume"];
           obj["Link"] = test_arr[k]["Link"];
           obj["Img"] = `../assets/productsImage/${test_arr[k]["No"]}.svg`;
-          obj["ImgFull"] = `../assets/productsImage/${test_arr[k]["No"]}full.svg`;
+          obj[
+            "ImgFull"
+          ] = `../assets/productsImage/${test_arr[k]["No"]}full.svg`;
           this.body.push(obj);
           // console.log("body");
         }
@@ -718,14 +722,29 @@ class productsClass {
     return this.newProducts;
   }
   FilteredBodyCategory(name) {
-    return this.body.filter((item) => item.Category == name);
+    return this.body.filter((item) => item["Category"] == name);
   }
   FilteredSkinCategory(name) {
-    return this.skin.filter((item) => item.Category == name);
+    return this.skin.filter((item) => item["Category"] == name);
+  }
+  oneProduct(name) {
+    let oneProduct = [];
+    oneProduct.push(this.skin.filter((item) => item["Product Name"] == name));
+    oneProduct.push(this.body.filter((item) => item["Product Name"] == name));
+    return oneProduct;
+  }
+  similarProduct(product) {
+    let similarProduct = [];
+    similarProduct.push(this.FilteredSkinCategory(product["Category"]));
+    similarProduct.push(this.FilteredBodyCategory(product["Category"]));
+    console.log(similarProduct);
+    return similarProduct.map((e) =>
+      e.filter((item) => item["Product Name"] != product["Product Name"])
+    );
   }
 }
 let p = new productsClass();
-let temp = p.FilteredSkinCategory("Mask")
-for (let i in temp){
+let temp = p.FilteredSkinCategory("Mask");
+for (let i in temp) {
   console.log(temp[i]["ImgFull"]);
 }

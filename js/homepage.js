@@ -6,6 +6,8 @@ const populate_product = (i, element) => {
   let outer_card = document.createElement("div");
   outer_card.className = "outer_card";
   outer_card.style.transition = "top 2.0s linear 0s";
+  let args = document.createElement("div");
+  args.className = "args";
   let best_seller = document.createElement("div");
   best_seller.className = "best_seller";
   let card = document.createElement("div");
@@ -23,7 +25,7 @@ const populate_product = (i, element) => {
   initial_price.className = "initial_price";
   let button = document.createElement("button");
   // outer_card.append(best_seller);
-  outer_card.append(card);
+  outer_card.append(args, card);
   card.append(card_image, card_description, button);
   card_description.append(h3, h2, p, price, initial_price);
   h3.innerText = i["Brand"];
@@ -32,6 +34,7 @@ const populate_product = (i, element) => {
   card_image.style.backgroundImage = `url(${i["Img"]})`;
   console.log(i["Img"]);
   price.innerHTML = i["Final Price"];
+  args.innerHTML = i["Note (Pop -out circle)"] == "BS" ? "Best Seller" : "New";
   if (i["Initial Price"] != null) {
     console.log(i["Initial Price"]);
     initial_price.innerHTML = i["Initial Price"];
@@ -44,6 +47,7 @@ const populate_product = (i, element) => {
   }
 };
 
+//generate the cards for best seller and new seller
 window.onload = () => {
   let p = new productsClass();
   p.getBy("BS");
@@ -56,50 +60,17 @@ window.onload = () => {
     console.log(p.newProducts[i]);
     populate_product(p.newProducts[i], "N");
   }
+  let cards_button = document.querySelectorAll(".card button");
+  cards_button.forEach((e) => {
+    e.addEventListener("click", (elem) => {
+      //get the the parent outer card and get the child title
+
+      //title of the card
+      let title = elem.target.parentElement.children[1].children[1];
+      title.style.border = "none";
+      localStorage.setItem("product_title", title.innerText);
+      console.log(localStorage.getItem("product_title"));
+      window.location.href = "../html/ViewProductPage.html";
+    });
+  });
 };
-
-// let products = document.querySelectorAll(".products_container div");
-// let p = new productsClass();
-// products.forEach((elem) => {
-//   elem.addEventListener("mouseenter", (e) => {
-//     console.log("Hit")
-//     // skin
-//     if (e.target.className == "cleanser") {
-//       let temp = p.FilteredSkinCategory("Cleanser");
-//       // console.log(p.FilteredSkinCategory("Cleanser"));
-//       let i = 0;
-//       for(let j in temp){
-//         setTimeout(() => {
-//           // console.log(temp[0]["ImgFull"]);
-//           e.target.style.backgroundImage = `url(${temp[i++]["ImgFull"]})`;
-//         }, 500);
-//       }
-//     } else if (e.target.className == "essence") {
-//       console.log(p.FilteredSkinCategory("Essence"));
-//       skin = 1;
-//     } else if (e.target.className == "serum") {
-//       console.log(p.FilteredSkinCategory("Serum"));
-//       skin = 1;
-//     } else if (e.target.className == "mask") {
-//       console.log(p.FilteredSkinCategory("Mask"));
-//       skin = 1;
-//     }
-
-//     // body
-//     else if (e.target.className == "wash") {
-//       console.log(p.FilteredBodyCategory("Wash"));
-//       body = 1;
-//     } else if (e.target.className == "scrub") {
-//       console.log(p.FilteredBodyCategory("Scrub"));
-//       body = 1;
-//     } else if (e.target.className == "butter") {
-//       console.log(p.FilteredBodyCategory("Butter"));
-//       body = 1;
-//     } else if (e.target.className == "lotion") {
-//       console.log(p.FilteredBodyCategory("Lotion"));
-//       body = 1;
-//     }
-    // for (i in p.FilteredSkinCategory("Cleanser")) {
-    // }
-//   });
-// });

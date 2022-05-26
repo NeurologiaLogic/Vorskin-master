@@ -6,6 +6,8 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+
 }
 //mobile first desktop second
 * {
@@ -251,6 +253,7 @@ body {
   }
 }
 footer {
+  width: 100%;
   .footer_logo {
     display: flex;
     flex-direction: column;
@@ -443,20 +446,21 @@ footer {
           animation: marquee 30s linear 3.5s infinite;
         }
       }
-      /* even out the elements */
-      // div {
-      //   position: absolute;
-      //   width: 100%;
-      //   left: 100%;
-      //   height: 40px;
-      //   display: flex;
-      //   justify-content: space-between;
-      // }
       &:hover {
         animation-play-state: paused;
       }
     }
   }
+
+  footer{
+    display:flex;
+  }
+
+  footer div{
+    display:flex;
+    flex-direction: column;
+  }
+
   * {
     padding: 0;
     margin: 0;
@@ -467,11 +471,44 @@ footer {
   }
   nav .desktop-nav {
     display: flex;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
     flex-direction: column;
     background: none;
-    img {
-      width: 8rem;
-      margin: 0 auto;
+    .logo_wrapper{
+      display:flex;
+      justify-content:flex-end;
+      align-items:flex-end;
+      .spacing{
+        height:2rem;
+        width:2rem;
+        margin-left:1rem;
+      }
+      img {
+        width: 8rem;
+        margin: 0 auto;
+      }
+      .search_navbar{
+        height:2rem;
+        width:2rem;
+        background-image:url("../assets/search_navbar.svg");
+        background-size: contain;
+        background-repeat:no-repeat;
+        margin-right:1rem;
+        margin-top:1rem;
+
+      }
+      .cart_navbar{
+        justify-content:flex-end;
+        height:2rem;
+        width:2rem;
+        background-image:url("../assets/cart_navbar.svg");
+        margin-right:1rem;
+        background-size: contain;
+        background-repeat:no-repeat;
+        margin-top:1rem;
+      }
     }
     ul {
       margin: 0 auto;
@@ -482,6 +519,14 @@ footer {
         a {
           color: black;
         }
+      }
+    }
+  }
+  footer{
+    .footer_navbar{
+      ul {
+        display: flex;
+        justify-content: center;
       }
     }
   }

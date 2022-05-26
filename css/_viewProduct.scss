@@ -1,4 +1,182 @@
-@import '_settings';
-.viewProduct{
-   
+@import "_settings";
+.viewProduct {
+  .product {
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      .img_container {
+        margin: 0 auto;
+        width: 50%;
+        height: 50vh;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .description {
+        margin: 0 auto;
+        width: 70%;
+        .brand {
+          font-size: 1rem;
+          font-weight: bold;
+          color: black;
+          margin-bottom: 1rem;
+        }
+        .title {
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+        .price_wrapper {
+          display: flex;
+          .initial_price {
+            text-decoration: line-through;
+            margin-right: 0.5rem;
+          }
+          .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 1rem;
+          }
+        }
+        .stocks {
+          border-radius: 25px;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 10vw;
+          .stock {
+            color: white;
+            background-color: black;
+            width: 2rem;
+            text-align: center;
+          }
+        }
+        .pay_add_to_cart {
+          border: 1px solid red;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          .add_to_cart {
+            width: 100%;
+            background: $primary;
+            border: none;
+            padding: 0.5rem 1rem;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+          }
+          .pay_now {
+            margin-top: 1rem;
+            width: 100%;
+            background: $secondary;
+            border: none;
+            padding: 0.5rem 1rem;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .similar_products {
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    overflow: auto;
+    .outer_card {
+      flex: none;
+      transition: all 2s ease-in-out;
+      width: 200px;
+      position: relative;
+      .args {
+        display: flex;
+        font-size: 1rem;
+        font-weight: medium;
+        padding: 1rem;
+        color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: black;
+      }
+      .card {
+        transition: all 0.5s ease-in-out;
+        box-shadow: 0px 4.19672px 4.19672px rgba(73, 62, 131, 0.3);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem;
+        border-radius: 21px;
+        background-color: white;
+        .card_image {
+          transition: all 5s ease-in-out;
+          // background-image: url("../assets/productsImage/1.svg");
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 200px;
+          width: 100%;
+        }
+        .card_description {
+          transition: all 0.2s ease-in-out;
+          padding: 0.5rem 1rem;
+          align-items: flex-end;
+          height: 9rem;
+          h3 {
+            text-align: left;
+            font-size: 1.7vw;
+            letter-spacing: 0.2rem;
+            display: block;
+          }
+          h2 {
+            text-align: left;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0.5rem 0;
+          }
+          p {
+            text-align: left;
+            font-size: 12px;
+            font-weight: medium;
+          }
+          .initial_price {
+            text-align: left;
+            text-decoration: line-through;
+            margin-right: 0.5rem;
+          }
+        }
+        .price {
+          font-size: 16px;
+          font-weight: medium;
+        }
+        button {
+          transition: all 0.5s ease-in-out;
+          background: $primary;
+          border: none;
+          padding: 0.5rem 1rem;
+          color: white;
+          font-weight: bold;
+          &:hover {
+            background: linear-gradient(
+              to right,
+              $gradient_start,
+              $gradient_end
+            );
+          }
+        }
+      }
+    }
+  }
 }
