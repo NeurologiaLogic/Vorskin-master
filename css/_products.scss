@@ -61,25 +61,6 @@
       }
     }
   }
-  .skin_product_section,
-  .body_product_section {
-    h2 {
-      text-align: left;
-    }
-    p {
-      padding: 0 2rem;
-      text-align: left;
-    }
-  }
-  .body_product_section {
-    .cover {
-      background: url("../assets/ProductPage/body_care_cover.svg") no-repeat
-        right center;
-      display: cover;
-      width: 100%;
-      height: 50vw;
-    }
-  }
   .filter_sort {
     transition: all 0.5s ease-in-out;
     height: auto;
@@ -205,87 +186,13 @@
     }
   }
 
-  .product_list_section {
-    // height:348px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 1rem;
-    width: 100%;
-    .outer_card {
-      transition: all 2s ease-in-out;
-      // opacity: 0;
-      width: 255px;
-      position: relative;
-      .args {
-        font-size: 14px;
-        padding: 10px;
-        color: white;
-        position: absolute;
-        top: 0;
-        right: 0;
-        text-align: center;
-        // border:1px solid red;
-        width: 4rem;
-        height: 4rem;
-        border-radius: 50%;
-        background-color: black;
-      }
-      .card {
-        transition: all 0.5s ease-in-out;
-        box-shadow: 0px 4.19672px 4.19672px rgba(73, 62, 131, 0.3);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        margin: 0.5rem;
-        border-radius: 21px;
-        background-color: white;
-        .card_image {
-          transition: all 5s ease-in-out;
-          background-image: url("../assets/ProductPage/serum_card.svg");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          height: 200px;
-          width: 100%;
-        }
-        .card_description {
-          transition: all 0.2s ease-in-out;
-          padding: 0.5rem 1rem;
-          align-items: flex-end;
-          h3 {
-            font-size: 12px;
-            letter-spacing: 0.2rem;
-          }
-          h2 {
-            font-size: 14px;
-            font-weight: bold;
-          }
-          p {
-            font-size: 12px;
-            font-weight: medium;
-          }
-          .price {
-            font-size: 16px;
-            font-weight: medium;
-          }
-          .initial_price {
-            text-decoration: line-through;
-            margin-right: 0.5rem;
-          }
-        }
-        button {
-          background: $primary;
-          border: none;
-          padding: 0.5rem 1rem;
-          color: white;
-          font-weight: bold;
-        }
-      }
-    }
-  }
-
   .skin_product_section {
+    h1 {
+      padding: 1rem;
+    }
+    .desc {
+      padding: 1rem;
+    }
     .cover {
       background: url("../assets/ProductPage/skin_care_cover.svg") no-repeat
         left;
@@ -293,28 +200,31 @@
       width: 100%;
       height: 50vw;
     }
-    .skin_container_products {
+    .container_products {
       display: flex;
       flex-direction: column;
       .container {
         display: flex;
+        margin: 1rem 0rem;
+        align-items: left;
         .left {
-          width: 100%;
-          // height:70%;
-          display: inline-block;
+          margin-top: 3rem;
+          width: 40vw;
+          padding: 2rem 1rem;
+          margin-bottom: auto;
+          // display: inline-block;
           background-color: $secondary;
           .header {
-            border: 1px solid red;
+            // border: 1px solid red;
             padding: 0.5rem;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
             img {
               width: 5rem;
             }
             button {
               white-space: nowrap;
+              margin: 0.5rem 0;
               padding: 0.2rem 1rem;
               border: none;
               border-radius: 14px;
@@ -329,11 +239,10 @@
           }
           .short_desc {
             // border:1px solid red;
-            padding: 0.5rem 1rem;
+            padding: 0.5rem 0rem;
             letter-spacing: 1px;
             font-size: 12px;
             text-align: left;
-            height: 6rem;
           }
         }
         .products_container {
@@ -341,9 +250,182 @@
           padding: 1rem;
           // border: 1px solid red;
           display: flex;
+          flex-grow:1;
           .container {
             display: flex;
             .outer_card {
+              margin:0 1rem;
+              flex: none;
+              height:100%;
+              transition: all 2s ease-in-out;
+              width: 200px;
+              position: relative;
+              .args {
+                display: flex;
+                font-size: 1rem;
+                font-weight: medium;
+                padding: 1rem;
+                color: white;
+                position: absolute;
+                top: 0;
+                right: 0;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                background-color: black;
+              }
+              .card {
+                transition: all 0.5s ease-in-out;
+                box-shadow: 0px 4.19672px 4.19672px rgba(73, 62, 131, 0.3);
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                margin: 0.5rem;
+                border-radius: 21px;
+                background-color: white;
+                width:100%;
+                height:100%;
+                .card_image {
+                  transition: all 5s ease-in-out;
+                  background-image: url("../assets/productsImage/2.svg");
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  height: 200px;
+                  width: 100%;
+                }
+                .card_description {
+                  transition: all 0.2s ease-in-out;
+                  padding: 0.5rem 1rem;
+                  align-items: flex-end;
+
+                  h3 {
+                    text-align: left;
+                    font-size: 0.5rem;
+                    letter-spacing: 0.2rem;
+                    display: block;
+                  }
+                  h2 {
+                    text-align: left;
+                    font-size: 14px;
+                    font-weight: bold;
+
+                  }
+                  p {
+                    text-align: left;
+                    font-size: 12px;
+                    font-weight: medium;
+                  }
+                  .price-wrapper {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    width: 100%;
+                    // justify-content:space-between;
+                    .price {
+
+                      font-weight: medium;
+                    }
+                    .initial_price {
+                      text-decoration: line-through;
+                    }
+                  }
+                }
+                button {
+                  margin-top:auto;
+                  transition: all 0.5s ease-in-out;
+                  background: $primary;
+                  border: none;
+                  padding: 0.5rem 1rem;
+                  color: white;
+                  font-weight: bold;
+                  &:hover {
+                    background: linear-gradient(
+                      to right,
+                      $gradient_start,
+                      $gradient_end
+                    );
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .body_product_section {
+    h1 {
+      padding: 1rem;
+    }
+    .desc {
+      padding: 1rem;
+    }
+    .cover {
+      background: url("../assets/ProductPage/body_care_cover.svg") no-repeat
+        right center;
+      display: cover;
+      width: 100%;
+      height: 50vw;
+    }
+    .container_products {
+      display: flex;
+      flex-direction: column;
+      .container {
+        display: flex;
+        margin: 1rem 0rem;
+        align-items: left;
+        .left {
+          margin-top: 3rem;
+          width: 40vw;
+          padding: 2rem 1rem;
+          margin-bottom: auto;
+          // display: inline-block;
+          background-color: $secondary;
+          .header {
+            // border: 1px solid red;
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            img {
+              width: 5rem;
+            }
+            button {
+              white-space: nowrap;
+              margin: 0.5rem 0;
+              padding: 0.2rem 1rem;
+              border: none;
+              border-radius: 14px;
+              background: linear-gradient(
+                to right,
+                $gradient_start,
+                $gradient_end
+              );
+              color: white;
+              // font-size: $h7_size;
+            }
+          }
+          .short_desc {
+            // border:1px solid red;
+            padding: 0.5rem 0rem;
+            letter-spacing: 1px;
+            font-size: 12px;
+            text-align: left;
+          }
+        }
+        .products_container {
+          overflow: auto;
+          padding: 1rem;
+          // border: 1px solid red;
+          display: flex;
+
+          .container {
+            display: flex;
+            .outer_card {
+              margin:0 1rem;
               flex: none;
               transition: all 2s ease-in-out;
               width: 200px;
@@ -374,6 +456,8 @@
                 margin: 0.5rem;
                 border-radius: 21px;
                 background-color: white;
+                width:100%;
+                height:100%;
                 .card_image {
                   transition: all 5s ease-in-out;
                   background-image: url("../assets/productsImage/2.svg");
@@ -387,10 +471,11 @@
                   transition: all 0.2s ease-in-out;
                   padding: 0.5rem 1rem;
                   align-items: flex-end;
-                  height: 9rem;
+                  width:100%;
+
                   h3 {
                     text-align: left;
-                    font-size: 1.7vw;
+                    font-size: 0.5rem;
                     letter-spacing: 0.2rem;
                     display: block;
                   }
@@ -398,7 +483,7 @@
                     text-align: left;
                     font-size: 14px;
                     font-weight: bold;
-                    margin: 0.5rem 0;
+                    margin: 0.2rem 0;
                   }
                   p {
                     text-align: left;
@@ -416,6 +501,7 @@
                   font-weight: medium;
                 }
                 button {
+                  margin-top:auto;
                   transition: all 0.5s ease-in-out;
                   background: $primary;
                   border: none;
@@ -442,13 +528,41 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 1rem;
+    // border:1px solid red;
     h2 {
       font-size: $h2_size;
       font-weight: bold;
       color: $secondary3;
     }
-    img {
-      height: 2rem;
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        height: 2rem;
+      }
     }
+  }
+
+  @media screen and (min-width: 768px) {
+    .homepage-cover {
+      background-image: url("../assets/HomePage/desktop_homepage.svg");
+    }
+    .shop_section {
+      // border-top: 1px solid red;
+      .container {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+        // border-top: 1px solid red;
+        padding: 0 auto;
+      }
+    }
+    // .healthy_beauty_section{
+    //   img{
+    //     max-width:1/3vw;
+    //     height:100%;
+    //   }
+    // }
   }
 }

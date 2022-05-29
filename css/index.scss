@@ -523,6 +523,8 @@ footer {
     }
   }
   footer{
+    display:flex;
+    flex-direction:column;
     .footer_navbar{
       ul {
         display: flex;

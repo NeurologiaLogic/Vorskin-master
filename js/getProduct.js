@@ -729,14 +729,20 @@ class productsClass {
     let similarProduct = [];
     similarProduct.push(this.FilteredSkinCategory(product["Category"]));
     similarProduct.push(this.FilteredBodyCategory(product["Category"]));
-    console.log(similarProduct);
     return similarProduct.map((e) =>
       e.filter((item) => item["Product Name"] != product["Product Name"])
     );
   }
+  getCategory(productCategory) {
+    let sameCategory = [];
+    // console.log(productCategory);
+    sameCategory.push(this.FilteredSkinCategory(productCategory));
+    sameCategory.push(this.FilteredBodyCategory(productCategory));
+    return sameCategory;
+  }
 }
-let p = new productsClass();
-let temp = p.FilteredSkinCategory("Mask");
-for (let i in temp) {
-  console.log(temp[i]["ImgFull"]);
-}
+// let p = new productsClass();
+// let temp = p.FilteredSkinCategory("Mask");
+// for (let i in temp) {
+//   console.log(temp[i]["ImgFull"]);
+// }

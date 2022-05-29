@@ -1,44 +1,73 @@
 @import "_settings";
 
 .homepage {
-  img {
-    width: 100%;
+  box-sizing: border-box;
+  .homepage-cover {
+    width: 100vw;
+    height: 130vw;
+    background-image: url("../assets/HomePage/mobile_homepage.svg");
+    background-size: cover;
+    background-position: center;
   }
   .healthy_beauty_section {
     padding: 1rem 1rem;
     // border: 1px solid red;
     display: flex;
     flex-direction: column;
+    margin: 1rem 0;
+    text-align: center;
     img {
       // border: 1px solid red;
-      width: 100vw;
-      height: 50%;
+      width: 75vw;
+      height: 50vw;
       display: block;
       margin: auto;
     }
-    h2 {
-      text-align: center;
-    }
-    p {
-      margin: auto;
-      text-align: left;
-    }
-    button {
-      // border: 1px solid red;
-      border: none;
-      padding: 0.5rem 3rem;
-      margin: auto auto;
-      border-radius: 2rem;
-      font-size: $h1_size;
-      color: white;
-      font-weight: bold;
-      background: linear-gradient(to right, $gradient_start, $gradient_end);
+    .align{
+      h2 {
+        margin: 1rem 0;
+        text-align: center;
+      }
+      p {
+        // margin:1rem 0;
+        text-align: left;
+      }
+      button {
+        // border: 1px solid red;
+        border: none;
+        padding: 0.5rem 3rem;
+        margin: 1rem auto;
+        border-radius: 2rem;
+        font-size: $h1_size;
+        color: white;
+        font-weight: bold;
+        background: linear-gradient(to right, $gradient_start, $gradient_end);
+      }
     }
   }
   .shop_section {
+    ::-webkit-scrollbar {
+      width: 1px;
+      height: 5px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: #888;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #555;
+    }
     h2 {
       color: $secondary3;
-      margin: 1rem 0;
+      margin: 2rem 1rem 0 0;
       text-align: center;
     }
     .container {
@@ -91,33 +120,35 @@
             transition: all 0.2s ease-in-out;
             padding: 0.5rem 1rem;
             align-items: flex-end;
-            height: 9rem;
+            height: 13rem;
             h3 {
               text-align: left;
-              font-size: 1.7vw;
+              font-size: 0.5rem;
               letter-spacing: 0.2rem;
               display: block;
             }
             h2 {
-              text-align: left;
               font-size: 14px;
               font-weight: bold;
-              margin: 0.5rem 0;
+              text-align: left;
+              margin: 0.12rem 0;
             }
             p {
               text-align: left;
               font-size: 12px;
               font-weight: medium;
             }
-            .initial_price {
-              text-align: left;
-              text-decoration: line-through;
-              margin-right: 0.5rem;
+            .price-wrapper {
+              .initial_price {
+                text-align: left;
+                text-decoration: line-through;
+                margin-right: 0.5rem;
+              }
+              .price {
+                font-size: 16px;
+                font-weight: medium;
+              }
             }
-          }
-          .price {
-            font-size: 16px;
-            font-weight: medium;
           }
           button {
             transition: all 0.5s ease-in-out;
@@ -140,96 +171,26 @@
   }
 
   .products_section {
-    @keyframes cleanser {
-      25% {
-        background-image: url("../assets/productsImage/1full.svg");
-      }
-      50% {
-        background-image: url("../assets/productsImage/2full.svg");
-      }
-      75% {
-        background-image: url("../assets/productsImage/3full.svg");
-      }
-      100% {
-        background-image: url("../assets/productsImage/4full.svg");
-      }
+    margin: 1rem 0;
+    h2 {
+      text-align: center;
+      margin: 2rem 0;
     }
-    @keyframes essence {
-      25% {
-        background-image: url("../assets/productsImage/5full.svg");
-      }
-      50% {
-        background-image: url("../assets/productsImage/6full.svg");
-      }
-      75% {
-        background-image: url("../assets/productsImage/7full.svg");
-      }
-      100% {
-        background-image: url("../assets/productsImage/8full.svg");
-      }
-    }
-    @keyframes serum {
-      10% {
-        background-image: url("../assets/productsImage/9full.svg");
-      }
-      20% {
-        background-image: url("../assets/productsImage/10full.svg");
-      }
-      30% {
-        background-image: url("../assets/productsImage/11full.svg");
-      }
-      40% {
-        background-image: url("../assets/productsImage/12full.svg");
-      }
-      50% {
-        background-image: url("../assets/productsImage/13full.svg");
-      }
-      60% {
-        background-image: url("../assets/productsImage/14full.svg");
-      }
-    }
-    @keyframes mask {
-      0% {
-        background-image: url("../assets/productsImage/15full.svg");
-      }
-      10% {
-        background-image: url("../assets/productsImage/16full.svg");
-      }
-      20% {
-        background-image: url("../assets/productsImage/17full.svg");
-      }
-      30% {
-        background-image: url("../assets/productsImage/18full.svg");
-      }
-      40% {
-        background-image: url("../assets/productsImage/19full.svg");
-      }
-      50% {
-        background-image: url("../assets/productsImage/20full.svg");
-      }
-      60% {
-        background-image: url("../assets/productsImage/21full.svg");
-      }
-      70% {
-        background-image: url("../assets/productsImage/22full.svg");
-      }
-    }
-    padding: 1rem;
-    margin: 2rem 0rem;
     .container {
       display: flex;
       flex-direction: column;
       .products_container {
-        align-items: center;
-        justify-content: center;
         display: grid;
         grid-template-areas:
           "cleanser essence"
           "serum mask";
+        margin: auto auto;
+        grid-template-columns: 0.5fr 0.5fr;
+        grid-template-rows: 0.5fr 0.5fr;
         .cleanser {
           position: relative;
           text-align: center;
-          width: 15rem; // width:uto;
+          width: 12rem;
           grid-area: cleanser;
           // background-color: $primary;
           .img {
@@ -249,8 +210,8 @@
               pointer-events: none;
               top: 50%;
               left: 50%;
-              width: 70%;
-              height: 90%;
+              width: 95%;
+              height: 95%;
               transform: translate(-50%, -50%);
               // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
               background: linear-gradient(
@@ -265,11 +226,16 @@
                 opacity: 0;
                 transition: all 0.5s ease-in-out;
               }
+              ~ h2 {
+                margin-top: 3rem;
+              }
               // transition: all 0.5s ease-in-out;
             }
           }
           h2 {
-            // padding: auto 0;
+            font-size:1rem;
+            user-select: none;
+            transition: all 0.5s ease-in-out;
             position: absolute;
             z-index: 999;
             top: 50%;
@@ -286,10 +252,11 @@
         .essence {
           position: relative;
           text-align: center;
-          width: 15rem; // width:uto;
+          width: 12rem;
           grid-area: essence;
           // background-color: $primary;
           .img {
+            margin-right: 1rem;
             // border: 1px solid red;
             height: 300px;
             border-radius: 0.5rem;
@@ -305,8 +272,8 @@
               position: absolute;
               top: 50%;
               left: 50%;
-              width: 70%;
-              height: 90%;
+              width: 95%;
+              height: 95%;
               transform: translate(-50%, -50%);
               // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
               background: linear-gradient(
@@ -321,15 +288,16 @@
                 opacity: 0;
                 transition: all 0.5s ease-in-out;
               }
-              h2 {
-                opacity: 0;
-                transition: all 0.5s ease-in-out;
+              ~ h2 {
+                margin-top: 3rem;
               }
               // transition: all 0.5s ease-in-out;
             }
           }
           h2 {
-            // padding: auto 0;
+            font-size:1rem;
+            user-select: none;
+            transition: all 0.5s ease-in-out;
             position: absolute;
             z-index: 999;
             top: 50%;
@@ -345,7 +313,7 @@
         .serum {
           position: relative;
           text-align: center;
-          width: 15rem; // width:uto;
+          width: 12rem;
           grid-area: serum;
           // background-color: $primary;
           .img {
@@ -364,8 +332,8 @@
               position: absolute;
               top: 50%;
               left: 50%;
-              width: 70%;
-              height: 90%;
+              width: 95%;
+              height: 95%;
               transform: translate(-50%, -50%);
               // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
               background: linear-gradient(
@@ -380,14 +348,15 @@
                 opacity: 0;
                 transition: all 0.5s ease-in-out;
               }
-              h2 {
-                opacity: 0;
+              ~ h2 {
+                margin-top: 3rem;
               }
               // transition: all 0.5s ease-in-out;
             }
           }
           h2 {
-            // padding: auto 0;
+            user-select: none;
+            transition: all 0.5s ease-in-out;
             position: absolute;
             z-index: 999;
             top: 50%;
@@ -403,7 +372,7 @@
         .mask {
           position: relative;
           text-align: center;
-          width: 15rem; // width:uto;
+          width: 12rem;
           grid-area: mask;
 
           // background-color: $primary;
@@ -423,8 +392,8 @@
               position: absolute;
               top: 50%;
               left: 50%;
-              width: 70%;
-              height: 90%;
+              width: 95%;
+              height: 95%;
               transform: translate(-50%, -50%);
               // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
               background: linear-gradient(
@@ -439,13 +408,252 @@
                 opacity: 0;
                 transition: all 0.5s ease-in-out;
               }
-              h2 {
-                opacity: 0;
-                transition: all 0.5s ease-in-out;
+              ~ h2 {
+                margin-top: 3rem;
               }
             }
           }
           h2 {
+            user-select: none;
+            transition: all 0.5s ease-in-out;
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: $secondary3;
+            background-color: white;
+            padding: 0.5rem;
+          }
+        }
+
+        .wash {
+          position: relative;
+          text-align: center;
+          width: 12rem;
+          grid-area: cleanser;
+
+          // background-color: $primary;
+          .img {
+            // border: 1px solid red;
+            height: 300px;
+            border-radius: 0.5rem;
+            background-image: url("../assets/productsImage/27full.svg");
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: wash 6s linear infinite;
+            animation-play-state: paused;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 95%;
+              height: 95%;
+              transform: translate(-50%, -50%);
+              // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+              background: linear-gradient(
+                to bottom,
+                $gradient_start2,
+                $gradient_end2
+              );
+            }
+            &:hover {
+              animation-play-state: running;
+              &:after {
+                opacity: 0;
+                transition: all 0.5s ease-in-out;
+              }
+              ~ h2 {
+                margin-top: 3rem;
+              }
+            }
+          }
+          h2 {
+            user-select: none;
+            transition: all 0.5s ease-in-out;
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: $secondary3;
+            background-color: white;
+            padding: 0.5rem;
+            transition: all 0.5s ease-in-out;
+          }
+        }
+        .lotion {
+          position: relative;
+          text-align: center;
+          width: 12rem;
+          grid-area: mask;
+
+          // background-color: $primary;
+          .img {
+            // border: 1px solid red;
+            height: 300px;
+            border-radius: 0.5rem;
+            background-image: url("../assets/productsImage/33full.svg");
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: lotion 6s linear infinite;
+            animation-play-state: paused;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 95%;
+              height: 95%;
+              transform: translate(-50%, -50%);
+              // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+              background: linear-gradient(
+                to bottom,
+                $gradient_start2,
+                $gradient_end2
+              );
+            }
+            &:hover {
+              animation-play-state: running;
+              &:after {
+                opacity: 0;
+                transition: all 0.5s ease-in-out;
+              }
+              ~ h2 {
+                margin-top: 3rem;
+              }
+            }
+          }
+          h2 {
+            user-select: none;
+            transition: all 0.5s ease-in-out;
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: $secondary3;
+            background-color: white;
+            padding: 0.5rem;
+          }
+        }
+        .scrub {
+          position: relative;
+          text-align: center;
+          width: 12rem;
+          grid-area: essence;
+
+          // background-color: $primary;
+          .img {
+            // border: 1px solid red;
+            height: 300px;
+            border-radius: 0.5rem;
+            background-image: url("../assets/productsImage/30full.svg");
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: scrub 6s linear infinite;
+            animation-play-state: paused;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 95%;
+              height: 95%;
+              transform: translate(-50%, -50%);
+              // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+              background: linear-gradient(
+                to bottom,
+                $gradient_start2,
+                $gradient_end2
+              );
+            }
+            &:hover {
+              animation-play-state: running;
+              &:after {
+                opacity: 0;
+                transition: all 0.5s ease-in-out;
+              }
+              ~ h2 {
+                margin-top: 3rem;
+              }
+            }
+          }
+          h2 {
+            user-select: none;
+            transition: all 0.5s ease-in-out;
+            position: absolute;
+            z-index: 999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: $secondary3;
+            background-color: white;
+            padding: 0.5rem;
+          }
+        }
+        .butter {
+          position: relative;
+          text-align: center;
+          width: 12rem;
+          grid-area: serum;
+
+          // background-color: $primary;
+          .img {
+            // border: 1px solid red;
+            height: 300px;
+            border-radius: 0.5rem;
+            background-image: url("../assets/productsImage/24full.svg");
+            position: relative;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            animation: butter 6s linear infinite;
+            animation-play-state: paused;
+            &:after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 95%;
+              height: 95%;
+              transform: translate(-50%, -50%);
+              // filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+              background: linear-gradient(
+                to bottom,
+                $gradient_start2,
+                $gradient_end2
+              );
+            }
+            &:hover {
+              animation-play-state: running;
+              &:after {
+                opacity: 0;
+                transition: all 0.5s ease-in-out;
+              }
+              ~ h2 {
+                margin-top: 3rem;
+              }
+            }
+          }
+          h2 {
+            transition: all 0.5s ease-in-out;
+            user-select: none;
             // padding: auto 0;
             position: absolute;
             z-index: 999;
@@ -469,44 +677,39 @@
     padding: 0.5rem;
     h2 {
       text-align: center;
+      margin: 2rem 1rem 0;
     }
     .products_container {
       display: flex;
-      // border: 1px solid red;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
-      // flex-wrap: wrap;
       .product_card_one {
         filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
         // border: 1px solid red;
-        margin: 0 auto;
-        height: 300px;
-        width: 100%;
+        width: 240px;
         background-position: center;
         background-image: url(../assets/HomePage/promotion/promotion1.svg);
         background-size: contain;
         background-repeat: no-repeat;
+        background-repeat: no-repeat;
       }
       .product_card_two {
-        flex-wrap: wrap;
         filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
         // border: 1px solid red;
-        margin: 1rem auto;
-        height: 300px;
-        width: 100%;
+        margin: 1rem 1rem;
+        height: 500px;
+        width: 240px;
         background-position: center;
         background-image: url(../assets/HomePage/promotion/promotion2.svg);
         background-size: contain;
         background-repeat: no-repeat;
       }
-
       .product_card_three {
-        flex-wrap: wrap;
-
         filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
         // border: 1px solid red;
-        margin: 0 auto;
         height: 300px;
-        width: 100%;
+        width: 240px;
         background-position: center;
         background-image: url(../assets/HomePage/promotion/promotion3.svg);
         background-size: contain;
@@ -516,7 +719,6 @@
   }
   .brands {
     // border: 1px solid red;
-    margin: 3rem 0;
     justify-content: center;
     width: 100%;
     padding: 0.5rem 0.5rem;
@@ -573,6 +775,39 @@
   }
 
   @media screen and (min-width: 768px) {
+    .homepage-cover {
+      background-image: url("../assets/HomePage/desktop_homepage.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      height:21rem;
+    }
+    .healthy_beauty_section{
+      text-align:left;
+      .container{
+        display:flex;
+        img{
+          width:50vw;
+          height:25vw;
+        }
+        .align{
+          display:flex;
+          flex-direction:column;
+          margin-left:1rem;
+          h2{
+            font-weight:bold;
+            text-align:left;
+          }
+          p{
+            text-align:left;
+          }
+          button{
+            font-weight:bold;
+            text-align:left;
+            margin:0 auto 0 0;
+          }
+        }
+      }
+    }
     .shop_section {
       // border-top: 1px solid red;
       .container {
@@ -589,5 +824,124 @@
     //     height:100%;
     //   }
     // }
+  }
+}
+
+@keyframes cleanser {
+  25% {
+    background-image: url("../assets/productsImage/1full.svg");
+  }
+  50% {
+    background-image: url("../assets/productsImage/2full.svg");
+  }
+  75% {
+    background-image: url("../assets/productsImage/3full.svg");
+  }
+  100% {
+    background-image: url("../assets/productsImage/4full.svg");
+  }
+}
+@keyframes essence {
+  25% {
+    background-image: url("../assets/productsImage/5full.svg");
+  }
+  50% {
+    background-image: url("../assets/productsImage/6full.svg");
+  }
+  75% {
+    background-image: url("../assets/productsImage/7full.svg");
+  }
+  100% {
+    background-image: url("../assets/productsImage/8full.svg");
+  }
+}
+@keyframes serum {
+  10% {
+    background-image: url("../assets/productsImage/9full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/10full.svg");
+  }
+  30% {
+    background-image: url("../assets/productsImage/11full.svg");
+  }
+  40% {
+    background-image: url("../assets/productsImage/12full.svg");
+  }
+  50% {
+    background-image: url("../assets/productsImage/13full.svg");
+  }
+  60% {
+    background-image: url("../assets/productsImage/14full.svg");
+  }
+}
+@keyframes mask {
+  0% {
+    background-image: url("../assets/productsImage/15full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/16full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/17full.svg");
+  }
+  30% {
+    background-image: url("../assets/productsImage/18full.svg");
+  }
+  40% {
+    background-image: url("../assets/productsImage/19full.svg");
+  }
+  50% {
+    background-image: url("../assets/productsImage/20full.svg");
+  }
+  60% {
+    background-image: url("../assets/productsImage/21full.svg");
+  }
+  70% {
+    background-image: url("../assets/productsImage/22full.svg");
+  }
+}
+@keyframes wash {
+  0% {
+    background-image: url("../assets/productsImage/27full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/28full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/29full.svg");
+  }
+}
+@keyframes scrub {
+  0% {
+    background-image: url("../assets/productsImage/30full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/31full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/32full.svg");
+  }
+}
+@keyframes butter {
+  0% {
+    background-image: url("../assets/productsImage/24full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/25full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/26full.svg");
+  }
+}
+@keyframes lotion {
+  0% {
+    background-image: url("../assets/productsImage/33full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/34full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/35full.svg");
   }
 }

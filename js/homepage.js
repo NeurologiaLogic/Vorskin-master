@@ -21,23 +21,32 @@ const populate_product = (i, element) => {
   let p = document.createElement("p");
   let price = document.createElement("h2");
   let initial_price = document.createElement("h2");
+  //added
+  let price_wrapper = document.createElement("div");
+  price_wrapper.className = "price-wrapper";
+  price_wrapper.append(initial_price, price)
+  card_description.append(h3, h2, p, price_wrapper);
+
   price.className = "price";
   initial_price.className = "initial_price";
   let button = document.createElement("button");
   // outer_card.append(best_seller);
   outer_card.append(args, card);
   card.append(card_image, card_description, button);
-  card_description.append(h3, h2, p, price, initial_price);
+  card_description.append(h3, h2, p, price_wrapper);
   h3.innerText = i["Brand"];
   h2.innerText = i["Product Name"];
   p.innerHTML = i["Short Desc"];
   card_image.style.backgroundImage = `url(${i["Img"]})`;
   console.log(i["Img"]);
-  price.innerHTML = i["Final Price"];
+  price.innerHTML = `Rp. ${i["Final Price"]}`;
   args.innerHTML = i["Note (Pop -out circle)"] == "BS" ? "Best Seller" : "New";
   if (i["Initial Price"] != null) {
     console.log(i["Initial Price"]);
-    initial_price.innerHTML = i["Initial Price"];
+    initial_price.innerHTML = `Rp.${i["Initial Price"]}`;
+    price.style.margin="0 0 0 0.5rem"
+    initial_price.style.fontSize = ".3rem"
+
   }
   button.innerHTML = "Shop Now";
   if (element == "BS") {
