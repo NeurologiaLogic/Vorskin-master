@@ -606,14 +606,6 @@ class productsClass {
   offerProducts = [];
   soldOutProducts = [];
   newProducts = [];
-  cleanser = [];
-  essence = [];
-  serum = [];
-  mask = [];
-  wash = [];
-  scrub = [];
-  butter = [];
-  lotion = [];
 
   getBy(type) {
     if (type == "BS") {

@@ -29,7 +29,7 @@
       padding: 0.5rem 3rem;
       margin: auto auto;
       border-radius: 2rem;
-      font-size:$h1_size;
+      font-size: $h1_size;
       color: white;
       font-weight: bold;
       background: linear-gradient(to right, $gradient_start, $gradient_end);
@@ -53,9 +53,9 @@
         width: 200px;
         position: relative;
         .args {
-          display:flex;
+          display: flex;
           font-size: 1rem;
-          font-weight:medium;
+          font-weight: medium;
           padding: 1rem;
           color: white;
           position: absolute;
@@ -126,8 +126,12 @@
             padding: 0.5rem 1rem;
             color: white;
             font-weight: bold;
-            &:hover{
-              background: linear-gradient(to right, $gradient_start, $gradient_end);
+            &:hover {
+              background: linear-gradient(
+                to right,
+                $gradient_start,
+                $gradient_end
+              );
             }
           }
         }
@@ -257,10 +261,9 @@
             }
             &:hover {
               animation-play-state: running;
-              &:after{
-                opacity:0;
+              &:after {
+                opacity: 0;
                 transition: all 0.5s ease-in-out;
-
               }
               // transition: all 0.5s ease-in-out;
             }
@@ -276,7 +279,7 @@
             font-size: 1.5rem;
             color: $secondary3;
             background-color: white;
-            padding:.5rem;
+            padding: 0.5rem;
           }
         }
 
@@ -314,15 +317,13 @@
             }
             &:hover {
               animation-play-state: running;
-              &:after{
-                opacity:0;
+              &:after {
+                opacity: 0;
                 transition: all 0.5s ease-in-out;
-
               }
-              h2{
-                opacity:0;
+              h2 {
+                opacity: 0;
                 transition: all 0.5s ease-in-out;
-
               }
               // transition: all 0.5s ease-in-out;
             }
@@ -338,7 +339,7 @@
             font-size: 1.5rem;
             color: $secondary3;
             background-color: white;
-            padding:.5rem;
+            padding: 0.5rem;
           }
         }
         .serum {
@@ -375,13 +376,12 @@
             }
             &:hover {
               animation-play-state: running;
-              &:after{
-                opacity:0;
+              &:after {
+                opacity: 0;
                 transition: all 0.5s ease-in-out;
-
               }
-              h2{
-                opacity:0;
+              h2 {
+                opacity: 0;
               }
               // transition: all 0.5s ease-in-out;
             }
@@ -397,7 +397,7 @@
             font-size: 1.5rem;
             color: $secondary3;
             background-color: white;
-            padding:.5rem;
+            padding: 0.5rem;
           }
         }
         .mask {
@@ -435,15 +435,13 @@
             }
             &:hover {
               animation-play-state: running;
-              &:after{
-                opacity:0;
+              &:after {
+                opacity: 0;
                 transition: all 0.5s ease-in-out;
-
               }
-              h2{
-                opacity:0;
+              h2 {
+                opacity: 0;
                 transition: all 0.5s ease-in-out;
-
               }
             }
           }
@@ -458,7 +456,7 @@
             font-size: 1.5rem;
             color: $secondary3;
             background-color: white;
-            padding:.5rem;
+            padding: 0.5rem;
           }
         }
       }
@@ -522,12 +520,12 @@
     justify-content: center;
     width: 100%;
     padding: 0.5rem 0.5rem;
-    h2{
-      display:block;
+    h2 {
+      display: block;
     }
-    .brand_wrapper{
+    .brand_wrapper {
       display: flex;
-      width:100%;
+      width: 100%;
       .brand_one {
         // margin: 0 auto;
         display: inline-block;

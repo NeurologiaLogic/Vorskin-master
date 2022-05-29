@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
-.homepage img {
-  width: 100%;
+.homepage {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.homepage .homepage-cover {
+  width: 100vw;
+  height: 130vw;
+  background-image: url("../assets/HomePage/mobile_homepage.svg");
+  background-size: cover;
+  background-position: center;
 }
 
 .homepage .healthy_beauty_section {
@@ -12,28 +21,30 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 1rem 0;
+  text-align: center;
 }
 
 .homepage .healthy_beauty_section img {
-  width: 100vw;
-  height: 50%;
+  width: 75vw;
+  height: 50vw;
   display: block;
   margin: auto;
 }
 
-.homepage .healthy_beauty_section h2 {
+.homepage .healthy_beauty_section .align h2 {
+  margin: 1rem 0;
   text-align: center;
 }
 
-.homepage .healthy_beauty_section p {
-  margin: auto;
+.homepage .healthy_beauty_section .align p {
   text-align: left;
 }
 
-.homepage .healthy_beauty_section button {
+.homepage .healthy_beauty_section .align button {
   border: none;
   padding: 0.5rem 3rem;
-  margin: auto auto;
+  margin: 1rem auto;
   border-radius: 2rem;
   font-size: 60;
   color: white;
@@ -42,9 +53,32 @@
   background: linear-gradient(to right, #596a70, rgba(89, 106, 112, 0.17));
 }
 
+.homepage .shop_section {
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.homepage .shop_section ::-webkit-scrollbar {
+  width: 1px;
+  height: 5px;
+}
+
+.homepage .shop_section ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.homepage .shop_section ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.homepage .shop_section ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 .homepage .shop_section h2 {
   color: #456a70;
-  margin: 1rem 0;
+  margin: 2rem 1rem 0 0;
   text-align: center;
 }
 
@@ -125,21 +159,21 @@
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  height: 9rem;
+  height: 13rem;
 }
 
 .homepage .shop_section .container .outer_card .card .card_description h3 {
   text-align: left;
-  font-size: 1.7vw;
+  font-size: 0.5rem;
   letter-spacing: 0.2rem;
   display: block;
 }
 
 .homepage .shop_section .container .outer_card .card .card_description h2 {
-  text-align: left;
   font-size: 14px;
   font-weight: bold;
-  margin: 0.5rem 0;
+  text-align: left;
+  margin: 0.12rem 0;
 }
 
 .homepage .shop_section .container .outer_card .card .card_description p {
@@ -148,13 +182,13 @@
   font-weight: medium;
 }
 
-.homepage .shop_section .container .outer_card .card .card_description .initial_price {
+.homepage .shop_section .container .outer_card .card .card_description .price-wrapper .initial_price {
   text-align: left;
   text-decoration: line-through;
   margin-right: 0.5rem;
 }
 
-.homepage .shop_section .container .outer_card .card .price {
+.homepage .shop_section .container .outer_card .card .card_description .price-wrapper .price {
   font-size: 16px;
   font-weight: medium;
 }
@@ -175,8 +209,782 @@
 }
 
 .homepage .products_section {
-  padding: 1rem;
-  margin: 2rem 0rem;
+  margin: 1rem 0;
+}
+
+.homepage .products_section h2 {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.homepage .products_section .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.homepage .products_section .container .products_container {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "cleanser essence" "serum mask";
+  margin: auto auto;
+  -ms-grid-columns: 0.5fr 0.5fr;
+      grid-template-columns: 0.5fr 0.5fr;
+  -ms-grid-rows: 0.5fr 0.5fr;
+      grid-template-rows: 0.5fr 0.5fr;
+}
+
+.homepage .products_section .container .products_container .cleanser {
+  position: relative;
+  text-align: center;
+  width: 12rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: cleanser;
+}
+
+.homepage .products_section .container .products_container .cleanser .img {
+  height: 300px;
+  border-radius: 0.5rem;
+  background-image: url("../assets/productsImage/4full.svg");
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  -webkit-animation: cleanser 8s linear infinite;
+          animation: cleanser 8s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  background-repeat: no-repeat;
+}
+
+.homepage .products_section .container .products_container .cleanser .img:after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.8)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.8), rgba(255, 255, 255, 0.8));
+}
+
+.homepage .products_section .container .products_container .cleanser .img:hover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.homepage .products_section .container .products_container .cleanser .img:hover:after {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.homepage .products_section .container .products_container .cleanser .img:hover ~ h2 {
+  margin-top: 3rem;
+}
+
+.homepage .products_section .container .products_container .cleanser h2 {
+  font-size: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #456a70;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.homepage .products_section .container .products_container .essence {
+  position: relative;
+  text-align: center;
+  width: 12rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: essence;
+}
+
+.homepage .products_section .container .products_container .essence .img {
+  margin-right: 1rem;
+  height: 300px;
+  border-radius: 0.5rem;
+  background-image: url("../assets/productsImage/5full.svg");
+  position: relative;
+  -webkit-animation: essence 8s linear infinite;
+          animation: essence 8s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.homepage .products_section .container .products_container .essence .img:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.8)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.8), rgba(255, 255, 255, 0.8));
+}
+
+.homepage .products_section .container .products_container .essence .img:hover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.homepage .products_section .container .products_container .essence .img:hover:after {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.homepage .products_section .container .products_container .essence .img:hover ~ h2 {
+  margin-top: 3rem;
+}
+
+.homepage .products_section .container .products_container .essence h2 {
+  font-size: 1rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #456a70;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.homepage .products_section .container .products_container .serum {
+  position: relative;
+  text-align: center;
+  width: 12rem;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: serum;
+}
+
+.homepage .products_section .container .products_container .serum .img {
+  -webkit-animation: serum 12s linear infinite;
+          animation: serum 12s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  height: 300px;
+  border-radius: 0.5rem;
+  background-image: url("../assets/productsImage/9full.svg");
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.homepage .products_section .container .products_container .serum .img:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.8)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.8), rgba(255, 255, 255, 0.8));
+}
+
+.homepage .products_section .container .products_container .serum .img:hover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.homepage .products_section .container .products_container .serum .img:hover:after {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.homepage .products_section .container .products_container .serum .img:hover ~ h2 {
+  margin-top: 3rem;
+}
+
+.homepage .products_section .container .products_container .serum h2 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #456a70;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.homepage .products_section .container .products_container .mask {
+  position: relative;
+  text-align: center;
+  width: 12rem;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: mask;
+}
+
+.homepage .products_section .container .products_container .mask .img {
+  height: 300px;
+  border-radius: 0.5rem;
+  background-image: url("../assets/productsImage/15full.svg");
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-animation: mask 14s linear infinite;
+          animation: mask 14s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.homepage .products_section .container .products_container .mask .img:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.8)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.8), rgba(255, 255, 255, 0.8));
+}
+
+.homepage .products_section .container .products_container .mask .img:hover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.homepage .products_section .container .products_container .mask .img:hover:after {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.homepage .products_section .container .products_container .mask .img:hover ~ h2 {
+  margin-top: 3rem;
+}
+
+.homepage .products_section .container .products_container .mask h2 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #456a70;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.homepage .products_section .container .products_container .wash {
+  position: relative;
+  text-align: center;
+  width: 12rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: cleanser;
+}
+
+.homepage .products_section .container .products_container .wash .img {
+  height: 300px;
+  border-radius: 0.5rem;
+  background-image: url("../assets/productsImage/27full.svg");
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-animation: wash 6s linear infinite;
+          animation: wash 6s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.homepage .products_section .container .products_container .wash .img:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.8)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.8), rgba(255, 255, 255, 0.8));
+}
+
+.homepage .products_section .container .products_container .wash .img:hover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.homepage .products_section .container .products_container .wash .img:hover:after {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.homepage .products_section .container .products_container .wash .img:hover ~ h2 {
+  margin-top: 3rem;
+}
+
+.homepage .products_section .container .products_container .wash h2 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #456a70;
+  background-color: white;
+  padding: 0.5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.homepage .products_section .container .products_container .lotion {
+  position: relative;
+  text-align: center;
+  width: 12rem;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: mask;
+}
+
+.homepage .products_section .container .products_container .lotion .img {
+  height: 300px;
+  border-radius: 0.5rem;
+  background-image: url("../assets/productsImage/33full.svg");
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-animation: lotion 6s linear infinite;
+          animation: lotion 6s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.homepage .products_section .container .products_container .lotion .img:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.8)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.8), rgba(255, 255, 255, 0.8));
+}
+
+.homepage .products_section .container .products_container .lotion .img:hover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.homepage .products_section .container .products_container .lotion .img:hover:after {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.homepage .products_section .container .products_container .lotion .img:hover ~ h2 {
+  margin-top: 3rem;
+}
+
+.homepage .products_section .container .products_container .lotion h2 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #456a70;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.homepage .products_section .container .products_container .scrub {
+  position: relative;
+  text-align: center;
+  width: 12rem;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: essence;
+}
+
+.homepage .products_section .container .products_container .scrub .img {
+  height: 300px;
+  border-radius: 0.5rem;
+  background-image: url("../assets/productsImage/30full.svg");
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-animation: scrub 6s linear infinite;
+          animation: scrub 6s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.homepage .products_section .container .products_container .scrub .img:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.8)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.8), rgba(255, 255, 255, 0.8));
+}
+
+.homepage .products_section .container .products_container .scrub .img:hover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.homepage .products_section .container .products_container .scrub .img:hover:after {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.homepage .products_section .container .products_container .scrub .img:hover ~ h2 {
+  margin-top: 3rem;
+}
+
+.homepage .products_section .container .products_container .scrub h2 {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #456a70;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.homepage .products_section .container .products_container .butter {
+  position: relative;
+  text-align: center;
+  width: 12rem;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: serum;
+}
+
+.homepage .products_section .container .products_container .butter .img {
+  height: 300px;
+  border-radius: 0.5rem;
+  background-image: url("../assets/productsImage/24full.svg");
+  position: relative;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-animation: butter 6s linear infinite;
+          animation: butter 6s linear infinite;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.homepage .products_section .container .products_container .butter .img:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 95%;
+  height: 95%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.8)), to(rgba(255, 255, 255, 0.8)));
+  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.8), rgba(255, 255, 255, 0.8));
+}
+
+.homepage .products_section .container .products_container .butter .img:hover {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.homepage .products_section .container .products_container .butter .img:hover:after {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.homepage .products_section .container .products_container .butter .img:hover ~ h2 {
+  margin-top: 3rem;
+}
+
+.homepage .products_section .container .products_container .butter h2 {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #456a70;
+  background-color: white;
+  padding: 0.5rem;
+}
+
+.homepage .promotions {
+  padding: 0.5rem;
+}
+
+.homepage .promotions h2 {
+  text-align: center;
+  margin: 2rem 1rem 0;
+}
+
+.homepage .promotions .products_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.homepage .promotions .products_container .product_card_one {
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+  height: 500px;
+  width: 240px;
+  background-position: center;
+  background-image: url(../assets/HomePage/promotion/promotion1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.homepage .promotions .products_container .product_card_two {
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+  margin: 1rem 1rem;
+  height: 500px;
+  width: 240px;
+  background-position: center;
+  background-image: url(../assets/HomePage/promotion/promotion2.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.homepage .promotions .products_container .product_card_three {
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+  height: 300px;
+  width: 240px;
+  background-position: center;
+  background-image: url(../assets/HomePage/promotion/promotion3.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.homepage .brands {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+}
+
+.homepage .brands h2 {
+  display: block;
+}
+
+.homepage .brands .brand_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.homepage .brands .brand_wrapper .brand_one {
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+  background-image: url(../assets/HomePage/brands/brand1.svg);
+  background-position: center;
+  background-size: contain;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+  background-repeat: no-repeat;
+}
+
+.homepage .brands .brand_wrapper .brand_two {
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+  background-image: url(../assets/HomePage/brands/brand2.svg);
+  background-position: center;
+  background-size: contain;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+  background-repeat: no-repeat;
+}
+
+.homepage .brands .brand_wrapper .brand_three {
+  display: inline-block;
+  height: 100px;
+  width: 100%;
+  background-image: url(../assets/HomePage/brands/brand3.svg);
+  background-position: center;
+  background-size: contain;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+  background-repeat: no-repeat;
+}
+
+.homepage .brands .brand_wrapper .brand_four {
+  height: 100px;
+  width: 100%;
+  background-image: url(../assets/HomePage/brands/brand4.svg);
+  background-position: center;
+  background-size: contain;
+  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
+  background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 768px) {
+  .homepage .homepage-cover {
+    background-image: url("../assets/HomePage/desktop_homepage.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 21rem;
+  }
+  .homepage .healthy_beauty_section {
+    text-align: left;
+  }
+  .homepage .healthy_beauty_section .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .homepage .healthy_beauty_section .container img {
+    width: 50vw;
+    height: 25vw;
+  }
+  .homepage .healthy_beauty_section .container .align {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 1rem;
+  }
+  .homepage .healthy_beauty_section .container .align h2 {
+    font-weight: bold;
+    text-align: left;
+  }
+  .homepage .healthy_beauty_section .container .align p {
+    text-align: left;
+  }
+  .homepage .healthy_beauty_section .container .align button {
+    font-weight: bold;
+    text-align: left;
+    margin: 0 auto 0 0;
+  }
+  .homepage .shop_section .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
+    padding: 0 auto;
+  }
 }
 
 @-webkit-keyframes cleanser {
@@ -335,423 +1143,99 @@
   }
 }
 
-.homepage .products_section .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+@-webkit-keyframes wash {
+  0% {
+    background-image: url("../assets/productsImage/27full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/28full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/29full.svg");
+  }
 }
 
-.homepage .products_section .container .products_container {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  display: -ms-grid;
-  display: grid;
-      grid-template-areas: "cleanser essence" "serum mask";
+@keyframes wash {
+  0% {
+    background-image: url("../assets/productsImage/27full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/28full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/29full.svg");
+  }
 }
 
-.homepage .products_section .container .products_container .cleanser {
-  position: relative;
-  text-align: center;
-  width: 15rem;
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: cleanser;
+@-webkit-keyframes scrub {
+  0% {
+    background-image: url("../assets/productsImage/30full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/31full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/32full.svg");
+  }
 }
 
-.homepage .products_section .container .products_container .cleanser .img {
-  height: 300px;
-  border-radius: 0.5rem;
-  background-image: url("../assets/productsImage/4full.svg");
-  position: relative;
-  background-size: contain;
-  background-position: center;
-  -webkit-animation: cleanser 8s linear infinite;
-          animation: cleanser 8s linear infinite;
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-  background-repeat: no-repeat;
+@keyframes scrub {
+  0% {
+    background-image: url("../assets/productsImage/30full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/31full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/32full.svg");
+  }
 }
 
-.homepage .products_section .container .products_container .cleanser .img:after {
-  content: "";
-  position: absolute;
-  pointer-events: none;
-  top: 50%;
-  left: 50%;
-  width: 70%;
-  height: 90%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.5)), to(rgba(255, 255, 255, 0.5)));
-  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.5), rgba(255, 255, 255, 0.5));
+@-webkit-keyframes butter {
+  0% {
+    background-image: url("../assets/productsImage/24full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/25full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/26full.svg");
+  }
 }
 
-.homepage .products_section .container .products_container .cleanser .img:hover {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
+@keyframes butter {
+  0% {
+    background-image: url("../assets/productsImage/24full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/25full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/26full.svg");
+  }
 }
 
-.homepage .products_section .container .products_container .cleanser .img:hover:after {
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+@-webkit-keyframes lotion {
+  0% {
+    background-image: url("../assets/productsImage/33full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/34full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/35full.svg");
+  }
 }
 
-.homepage .products_section .container .products_container .cleanser h2 {
-  position: absolute;
-  z-index: 999;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #456a70;
-  background-color: white;
-  padding: .5rem;
-}
-
-.homepage .products_section .container .products_container .essence {
-  position: relative;
-  text-align: center;
-  width: 15rem;
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: essence;
-}
-
-.homepage .products_section .container .products_container .essence .img {
-  height: 300px;
-  border-radius: 0.5rem;
-  background-image: url("../assets/productsImage/5full.svg");
-  position: relative;
-  -webkit-animation: essence 8s linear infinite;
-          animation: essence 8s linear infinite;
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.homepage .products_section .container .products_container .essence .img:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 70%;
-  height: 90%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.5)), to(rgba(255, 255, 255, 0.5)));
-  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.5), rgba(255, 255, 255, 0.5));
-}
-
-.homepage .products_section .container .products_container .essence .img:hover {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-
-.homepage .products_section .container .products_container .essence .img:hover:after {
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.homepage .products_section .container .products_container .essence .img:hover h2 {
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.homepage .products_section .container .products_container .essence h2 {
-  position: absolute;
-  z-index: 999;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #456a70;
-  background-color: white;
-  padding: .5rem;
-}
-
-.homepage .products_section .container .products_container .serum {
-  position: relative;
-  text-align: center;
-  width: 15rem;
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  grid-area: serum;
-}
-
-.homepage .products_section .container .products_container .serum .img {
-  -webkit-animation: serum 12s linear infinite;
-          animation: serum 12s linear infinite;
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-  height: 300px;
-  border-radius: 0.5rem;
-  background-image: url("../assets/productsImage/9full.svg");
-  position: relative;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.homepage .products_section .container .products_container .serum .img:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 70%;
-  height: 90%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.5)), to(rgba(255, 255, 255, 0.5)));
-  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.5), rgba(255, 255, 255, 0.5));
-}
-
-.homepage .products_section .container .products_container .serum .img:hover {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-
-.homepage .products_section .container .products_container .serum .img:hover:after {
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.homepage .products_section .container .products_container .serum .img:hover h2 {
-  opacity: 0;
-}
-
-.homepage .products_section .container .products_container .serum h2 {
-  position: absolute;
-  z-index: 999;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #456a70;
-  background-color: white;
-  padding: .5rem;
-}
-
-.homepage .products_section .container .products_container .mask {
-  position: relative;
-  text-align: center;
-  width: 15rem;
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: mask;
-}
-
-.homepage .products_section .container .products_container .mask .img {
-  height: 300px;
-  border-radius: 0.5rem;
-  background-image: url("../assets/productsImage/15full.svg");
-  position: relative;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  -webkit-animation: mask 14s linear infinite;
-          animation: mask 14s linear infinite;
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
-}
-
-.homepage .products_section .container .products_container .mask .img:after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 70%;
-  height: 90%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(213, 252, 221, 0.5)), to(rgba(255, 255, 255, 0.5)));
-  background: linear-gradient(to bottom, rgba(213, 252, 221, 0.5), rgba(255, 255, 255, 0.5));
-}
-
-.homepage .products_section .container .products_container .mask .img:hover {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
-}
-
-.homepage .products_section .container .products_container .mask .img:hover:after {
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.homepage .products_section .container .products_container .mask .img:hover h2 {
-  opacity: 0;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-}
-
-.homepage .products_section .container .products_container .mask h2 {
-  position: absolute;
-  z-index: 999;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: #456a70;
-  background-color: white;
-  padding: .5rem;
-}
-
-.homepage .promotions {
-  padding: 0.5rem;
-}
-
-.homepage .promotions h2 {
-  text-align: center;
-}
-
-.homepage .promotions .products_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.homepage .promotions .products_container .product_card_one {
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-  margin: 0 auto;
-  height: 300px;
-  width: 100%;
-  background-position: center;
-  background-image: url(../assets/HomePage/promotion/promotion1.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.homepage .promotions .products_container .product_card_two {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-  margin: 1rem auto;
-  height: 300px;
-  width: 100%;
-  background-position: center;
-  background-image: url(../assets/HomePage/promotion/promotion2.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.homepage .promotions .products_container .product_card_three {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-  margin: 0 auto;
-  height: 300px;
-  width: 100%;
-  background-position: center;
-  background-image: url(../assets/HomePage/promotion/promotion3.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.homepage .brands {
-  margin: 3rem 0;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  padding: 0.5rem 0.5rem;
-}
-
-.homepage .brands h2 {
-  display: block;
-}
-
-.homepage .brands .brand_wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-
-.homepage .brands .brand_wrapper .brand_one {
-  display: inline-block;
-  height: 100px;
-  width: 100%;
-  background-image: url(../assets/HomePage/brands/brand1.svg);
-  background-position: center;
-  background-size: contain;
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-  background-repeat: no-repeat;
-}
-
-.homepage .brands .brand_wrapper .brand_two {
-  display: inline-block;
-  height: 100px;
-  width: 100%;
-  background-image: url(../assets/HomePage/brands/brand2.svg);
-  background-position: center;
-  background-size: contain;
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-  background-repeat: no-repeat;
-}
-
-.homepage .brands .brand_wrapper .brand_three {
-  display: inline-block;
-  height: 100px;
-  width: 100%;
-  background-image: url(../assets/HomePage/brands/brand3.svg);
-  background-position: center;
-  background-size: contain;
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-  background-repeat: no-repeat;
-}
-
-.homepage .brands .brand_wrapper .brand_four {
-  height: 100px;
-  width: 100%;
-  background-image: url(../assets/HomePage/brands/brand4.svg);
-  background-position: center;
-  background-size: contain;
-  -webkit-filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-          filter: drop-shadow(0px 4px 4px rgba(73, 62, 131, 0.1237));
-  background-repeat: no-repeat;
-}
-
-@media screen and (min-width: 768px) {
-  .homepage .shop_section .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    margin: 0 auto;
-    padding: 0 auto;
+@keyframes lotion {
+  0% {
+    background-image: url("../assets/productsImage/33full.svg");
+  }
+  10% {
+    background-image: url("../assets/productsImage/34full.svg");
+  }
+  20% {
+    background-image: url("../assets/productsImage/35full.svg");
   }
 }
 
@@ -826,31 +1310,6 @@
 .products .skin_body_section .right h1 {
   margin: auto;
   color: white;
-}
-
-.products .skin_body_set_section h2,
-.products .body_product_section h2,
-.products .skin_product_section h2 {
-  text-align: left;
-}
-
-.products .skin_body_set_section div,
-.products .body_product_section div,
-.products .skin_product_section div {
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.3))), url(../assets/ProductPage/skin_body_set.jpg);
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3)), url(../assets/ProductPage/skin_body_set.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  height: 200px;
-  width: 100%;
-}
-
-.products .skin_body_set_section p,
-.products .body_product_section p,
-.products .skin_product_section p {
-  padding: 0 2rem;
-  text-align: left;
 }
 
 .products .filter_sort {
@@ -1027,41 +1486,136 @@
   appearance: none;
 }
 
-.products .product_list_section {
+.products .skin_product_section h1 {
+  padding: 1rem;
+}
+
+.products .skin_product_section .desc {
+  padding: 1rem;
+}
+
+.products .skin_product_section .cover {
+  background: url("../assets/ProductPage/skin_care_cover.svg") no-repeat left;
+  display: cover;
+  width: 100%;
+  height: 50vw;
+}
+
+.products .skin_product_section .container_products {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding: 1rem;
-  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.products .product_list_section .outer_card {
+.products .skin_product_section .container_products .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0rem;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+}
+
+.products .skin_product_section .container_products .container .left {
+  margin-top: 3rem;
+  width: 40vw;
+  padding: 2rem 1rem;
+  margin-bottom: auto;
+  background-color: #90bdb2;
+}
+
+.products .skin_product_section .container_products .container .left .header {
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.products .skin_product_section .container_products .container .left .header img {
+  width: 5rem;
+}
+
+.products .skin_product_section .container_products .container .left .header button {
+  white-space: nowrap;
+  margin: 0.5rem 0;
+  padding: 0.2rem 1rem;
+  border: none;
+  border-radius: 14px;
+  background: -webkit-gradient(linear, left top, right top, from(#596a70), to(rgba(89, 106, 112, 0.17)));
+  background: linear-gradient(to right, #596a70, rgba(89, 106, 112, 0.17));
+  color: white;
+}
+
+.products .skin_product_section .container_products .container .left .short_desc {
+  padding: 0.5rem 0rem;
+  letter-spacing: 1px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.products .skin_product_section .container_products .container .products_container {
+  overflow: auto;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.products .skin_product_section .container_products .container .products_container .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.products .skin_product_section .container_products .container .products_container .container .outer_card {
+  margin: 0 1rem;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  height: 100%;
   -webkit-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
-  width: 255px;
+  width: 200px;
   position: relative;
 }
 
-.products .product_list_section .outer_card .args {
-  font-size: 14px;
-  padding: 10px;
+.products .skin_product_section .container_products .container .products_container .container .outer_card .args {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-weight: medium;
+  padding: 1rem;
   color: white;
   position: absolute;
   top: 0;
   right: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
   background-color: black;
 }
 
-.products .product_list_section .outer_card .card {
+.products .skin_product_section .container_products .container .products_container .container .outer_card .card {
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   -webkit-box-shadow: 0px 4.19672px 4.19672px rgba(73, 62, 131, 0.3);
@@ -1077,12 +1631,14 @@
   margin: 0.5rem;
   border-radius: 21px;
   background-color: white;
+  width: 100%;
+  height: 100%;
 }
 
-.products .product_list_section .outer_card .card .card_image {
+.products .skin_product_section .container_products .container .products_container .container .outer_card .card .card_image {
   -webkit-transition: all 5s ease-in-out;
   transition: all 5s ease-in-out;
-  background-image: url("../assets/ProductPage/serum_card.svg");
+  background-image: url("../assets/productsImage/2.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1090,7 +1646,7 @@
   width: 100%;
 }
 
-.products .product_list_section .outer_card .card .card_description {
+.products .skin_product_section .container_products .container .products_container .container .outer_card .card .card_description {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   padding: 0.5rem 1rem;
@@ -1099,37 +1655,325 @@
           align-items: flex-end;
 }
 
-.products .product_list_section .outer_card .card .card_description h3 {
-  font-size: 12px;
+.products .skin_product_section .container_products .container .products_container .container .outer_card .card .card_description h3 {
+  text-align: left;
+  font-size: 0.5rem;
   letter-spacing: 0.2rem;
+  display: block;
 }
 
-.products .product_list_section .outer_card .card .card_description h2 {
+.products .skin_product_section .container_products .container .products_container .container .outer_card .card .card_description h2 {
+  text-align: left;
   font-size: 14px;
   font-weight: bold;
 }
 
-.products .product_list_section .outer_card .card .card_description p {
+.products .skin_product_section .container_products .container .products_container .container .outer_card .card .card_description p {
+  text-align: left;
   font-size: 12px;
   font-weight: medium;
 }
 
-.products .product_list_section .outer_card .card .card_description .price {
-  font-size: 16px;
+.products .skin_product_section .container_products .container .products_container .container .outer_card .card .card_description .price-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.products .skin_product_section .container_products .container .products_container .container .outer_card .card .card_description .price-wrapper .price {
   font-weight: medium;
 }
 
-.products .product_list_section .outer_card .card .card_description .initial_price {
+.products .skin_product_section .container_products .container .products_container .container .outer_card .card .card_description .price-wrapper .initial_price {
   text-decoration: line-through;
-  margin-right: 0.5rem;
 }
 
-.products .product_list_section .outer_card .card button {
+.products .skin_product_section .container_products .container .products_container .container .outer_card .card button {
+  margin-top: auto;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
   background: #7eaea2;
   border: none;
   padding: 0.5rem 1rem;
   color: white;
   font-weight: bold;
+}
+
+.products .skin_product_section .container_products .container .products_container .container .outer_card .card button:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#596a70), to(rgba(89, 106, 112, 0.17)));
+  background: linear-gradient(to right, #596a70, rgba(89, 106, 112, 0.17));
+}
+
+.products .body_product_section h1 {
+  padding: 1rem;
+}
+
+.products .body_product_section .desc {
+  padding: 1rem;
+}
+
+.products .body_product_section .cover {
+  background: url("../assets/ProductPage/body_care_cover.svg") no-repeat right center;
+  display: cover;
+  width: 100%;
+  height: 50vw;
+}
+
+.products .body_product_section .container_products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.products .body_product_section .container_products .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0rem;
+  -webkit-box-align: left;
+      -ms-flex-align: left;
+          align-items: left;
+}
+
+.products .body_product_section .container_products .container .left {
+  margin-top: 3rem;
+  width: 40vw;
+  padding: 2rem 1rem;
+  margin-bottom: auto;
+  background-color: #90bdb2;
+}
+
+.products .body_product_section .container_products .container .left .header {
+  padding: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.products .body_product_section .container_products .container .left .header img {
+  width: 5rem;
+}
+
+.products .body_product_section .container_products .container .left .header button {
+  white-space: nowrap;
+  margin: 0.5rem 0;
+  padding: 0.2rem 1rem;
+  border: none;
+  border-radius: 14px;
+  background: -webkit-gradient(linear, left top, right top, from(#596a70), to(rgba(89, 106, 112, 0.17)));
+  background: linear-gradient(to right, #596a70, rgba(89, 106, 112, 0.17));
+  color: white;
+}
+
+.products .body_product_section .container_products .container .left .short_desc {
+  padding: 0.5rem 0rem;
+  letter-spacing: 1px;
+  font-size: 12px;
+  text-align: left;
+}
+
+.products .body_product_section .container_products .container .products_container {
+  overflow: auto;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.products .body_product_section .container_products .container .products_container .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card {
+  margin: 0 1rem;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  width: 200px;
+  position: relative;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card .args {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1rem;
+  font-weight: medium;
+  padding: 1rem;
+  color: white;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card .card {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-box-shadow: 0px 4.19672px 4.19672px rgba(73, 62, 131, 0.3);
+          box-shadow: 0px 4.19672px 4.19672px rgba(73, 62, 131, 0.3);
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0.5rem;
+  border-radius: 21px;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card .card .card_image {
+  -webkit-transition: all 5s ease-in-out;
+  transition: all 5s ease-in-out;
+  background-image: url("../assets/productsImage/2.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 200px;
+  width: 100%;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card .card .card_description {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  padding: 0.5rem 1rem;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  width: 100%;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card .card .card_description h3 {
+  text-align: left;
+  font-size: 0.5rem;
+  letter-spacing: 0.2rem;
+  display: block;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card .card .card_description h2 {
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0.2rem 0;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card .card .card_description p {
+  text-align: left;
+  font-size: 12px;
+  font-weight: medium;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card .card .card_description .initial_price {
+  text-align: left;
+  text-decoration: line-through;
+  margin-right: 0.5rem;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card .card .price {
+  font-size: 16px;
+  font-weight: medium;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card .card button {
+  margin-top: auto;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background: #7eaea2;
+  border: none;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+}
+
+.products .body_product_section .container_products .container .products_container .container .outer_card .card button:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#596a70), to(rgba(89, 106, 112, 0.17)));
+  background: linear-gradient(to right, #596a70, rgba(89, 106, 112, 0.17));
+}
+
+.products .happy_shopping_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 1rem;
+}
+
+.products .happy_shopping_section h2 {
+  font-size: 48;
+  font-weight: bold;
+  color: #456a70;
+}
+
+.products .happy_shopping_section a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.products .happy_shopping_section a img {
+  height: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .products .homepage-cover {
+    background-image: url("../assets/HomePage/desktop_homepage.svg");
+  }
+  .products .shop_section .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
+    padding: 0 auto;
+  }
 }
 
 .viewProduct .product .wrapper {
@@ -1332,7 +2176,7 @@
 
 .viewProduct .similar_products .outer_card .card .card_description h3 {
   text-align: left;
-  font-size: 1.7vw;
+  font-size: 0.5rem;
   letter-spacing: 0.2rem;
   display: block;
 }
@@ -2006,6 +2850,15 @@ footer .copyright p {
   }
   nav .desktop-nav ul li a {
     color: black;
+  }
+  footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   footer .footer_navbar ul {
     display: -webkit-box;
