@@ -14,33 +14,72 @@
   </head>
   <body class="about">
     <div class="navbar-overlay"></div>
+    <ul class="toggle-navbar">
+      <li class="vorskin-logo">
+        <a href="../html/HomePage.html"></a>
+      </li>
+      <li>
+        <a href="../html/HomePage.html">Home</a>
+      </li>
+      <li>
+        <a href="../html/Products.html">Products</a>
+        <div class="product-list"></div>
+      </li>
+      <li>
+        <a href="../html/AboutPage.html">About</a>
+      </li>
+      <li>
+        <a href="../html/Promotion.html">Promotion</a>
+      </li>
+      <li>
+        <a href="../html/Subscribe.html">Subscribe</a>
+      </li>
+    </ul>
+    <!-- end toggle mobile menu -->
+    <!-- search button -->
+    <!-- search button -->
+    <header>
+      <div class="marquee">
+        <div class="marquee-content">
+          <h3>patrick</h3>
+          <h3>michele</h3>
+          <h3>patrick</h3>
+          <h3>michele</h3>
+          <h3>patrick</h3>
+          <h3>michele</h3>
+          <h3>patrick</h3>
+          <h3>michele</h3>
+        </div>
+    </header>
     <nav>
+      <!-- mobile naviagtion menu start -->
       <div class="mobile-nav">
+        <input
+          class="search-menu"
+          type="text"
+          name=""
+          id="#search-menu"
+          placeholder="search it"
+        />
         <div class="burger-navbar"></div>
-        <ul class="toggle-navbar">
-          <li class="vorskin-logo">
-            <a href="../html/HomePage.html"></a>
-          </li>
-          <li>
-            <a href="../html/HomePage.html">Home</a>
-          </li>
-          <li>
-            <a href="../html/Products.html">Products</a>
-          </li>
-          <li>
-            <a href="../html/AboutPage.html">About</a>
-          </li>
-          <li>
-            <a href="../html/Promotion.html">Promotion</a>
-          </li>
-          <li>
-            <a href="../html/Subscribe.html">Subscribe</a>
-          </li>
-        </ul>
-        <img src="../assets/vorskin_logo.png" alt="Vorskin Logo" />
-        <div class="search-navbar"></div>
+        <img src="../assets/vorskin_logo.svg" alt="Vorskin Logo" />
+        <div class="group">
+          <div class="search-navbar"></div>
+          <div class="cart-navbar"></div>
+        </div>
+
       </div>
+      <!-- mobile naviagtion menu end -->
+
+      <!-- desktop naviagtion menu -->
       <div class="desktop-nav">
+        <div class="logo_wrapper">
+          <div class="spacing"></div>
+          <div class="spacing"></div>
+          <img src="../assets/vorskin_logo.svg" alt="Vorskin Logo" />
+          <div class="search_navbar"></div>
+          <div class="cart_navbar"></div>
+        </div>
         <ul>
           <li>
             <a href="../html/HomePage.html">Home</a>
@@ -58,39 +97,127 @@
             <a href="../html/Subscribe.html">Subscribe</a>
           </li>
         </ul>
-        <img src="../assets/vorskin_logo.png" alt="Vorskin Logo" />
       </div>
     </nav>
     <header>
-      <h3>home > about</h3>
+      <div class="homepage-cover"></div>
     </header>
     <main>
-      <section class="healthy_beauty_section">
-        <h2>healthy and beauty</h2>
-        <img src="../assets/healthy_beauty_section.jpg" alt="" />
-        <h2>vegan, cruelty-free, non-toxic</h2>
+      <section class="introduction">
+        <div class="logo">
+          <img src="../assets/vorskin_logo.svg" alt="" />
+          <h2>beauty with vegan</h2>
+        </div>
         <p>
-          Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-          exercitation ullamco laboris nisi.
+          Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+          Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+          Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
         </p>
-        <button>find out more</button>
+      </section>
+      <section class="vision_mission">
+          <div class="container_wrapper">
+            <img class="mobile" src="../assets/AboutUsPage/vision.png" alt="">
+            <div class="seperator">
+              <h2>Vision</h2>
+              <p>To rise the fame of Indonesia’s diverse resources with vegan, cruelty-free, and toxic beauty produces</p>
+            </div>
+            <img class="desktop" src="../assets/AboutUsPage/vision.png" alt="">
+          </div>
+          <div class="container_wrapper">
+            <img src="../assets/AboutUsPage/mission.png" alt="">
+            <div class="seperator">
+              <h2>Mission</h2>
+              <p>
+                Conserve Indonesia's beauty production and gain and spreading awareness through partnered and potential brands.
+              </p>
+            </div>
+          </div>
       </section>
       <section class="history">
         <div class="container">
           <h2>history</h2>
-          <div class="box"></div>
-          <div class="year">2020</div>
 
-          <div class="box"></div>
-          <div class="year">2021</div>
+          <div class="box">
+            <img class="date_of_event" src="../assets/AboutUsPage/jan.png" alt="">
+            <img src="../assets/AboutUsPage/climate-change.png" alt="">
+            <div class="description">
+              <h3>Climate Change</h3>
+              <p>
+                Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                </p>
+            </div>
+          </div>
 
-          <div class="box"></div>
-          <div class="year">2022</div>
+          <div class="box">
+            <div class="description two">
+              <img class="date_of_event" src="../assets/AboutUsPage/apr.png" alt="">
+              <img  class="mobile" src="../assets/AboutUsPage/non-toxic.png" alt="">
+              <h3>title</h3>
+              <p>
+
+                Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+                Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+
+              </p>
+            </div>
+            <img  class="desktop" src="../assets/AboutUsPage/non-toxic.png" alt="">
+          </div>
+
+          <div class="box">
+            <img class="date_of_event" src="../assets/AboutUsPage/ags.png" alt="">
+            <img src="../assets/AboutUsPage/rabbit.png" alt="">
+            <div class="description">
+              <h3>title</h3>
+              <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="description two">
+              <img class="date_of_event" src="../assets/AboutUsPage/des.png" alt="">
+              <img class="mobile" src="../assets/AboutUsPage/partnership.png" alt="">
+              <h3>title</h3>
+              <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+            </div>
+            <img class="desktop" src="../assets/AboutUsPage/partnership.png" alt="">
+          </div>
+
+          <div class="box">
+            <img class="date_of_event" src="../assets/AboutUsPage/jan2.png" alt="">
+            <img src="../assets/AboutUsPage/climate-action.png" alt="">
+            <div class="description">
+              <h3>title</h3>
+              <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi. Amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+            </div>
+          </div>
+
+
+
+          <div class="thanks">
+            <h2>Thanks to you!</h2>
+            <h1>Rp. <span class ="subsCount"></span></h1>
+            <p>has been donated
+              to support beauty equality
+              and climate action in Indonesia</p>
+          </div>
+
+
+          <h2 class="left">Our Location</h2>
+          <div class="box">
+            <img src="../assets/AboutUsPage/location.png" alt="">
+            <div class="description center">
+              <!-- <h3>title</h3> -->
+              <p>SCBD, Office 8 Level 18-A, Jl. Jend. sudirman kav 52-53, RT.8/RW.3, Senayan, Kec. Kby. Baru, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12190</p>
+            </div>
+          </div>
+
         </div>
       </section>
     </main>
     <footer></footer>
   </body>
+  <script src="../js/navigation.js"></script>
   <script src="../js/mechanic.js"></script>
+  <script src ="../js/aboutuspage.js"></script>
 </html>

@@ -733,6 +733,7 @@ class productsClass {
       e.filter((item) => item["Product Name"] != product["Product Name"])
     );
   }
+
   getCategory(productCategory) {
     let sameCategory = [];
     // console.log(productCategory);
